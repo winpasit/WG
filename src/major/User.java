@@ -28,4 +28,18 @@ public class User {
 	}
 	//<-getter
 	
+	//setter->
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	
+	public void setDayPerWeek(int dayPerWeek) {
+		this.dayPerWeek = dayPerWeek;
+	}
+	
+	public void setBodyShape(String bodyShape) {
+		this.bodyShape = bodyShape;
+	}
+	
+	
 }
