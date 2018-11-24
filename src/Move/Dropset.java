@@ -1,5 +1,5 @@
 package Move;
 
-public class Dropset extends Excercise{
+public class Dropset extends Exercise{
 
 }

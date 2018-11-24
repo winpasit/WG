@@ -1,5 +1,5 @@
 package Move;
 
-public class WeightVest extends Excercise{
+public class WeightVest extends Exercise{
 
 }

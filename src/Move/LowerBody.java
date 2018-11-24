@@ -1,5 +1,5 @@
 package Move;
 
-public class LowerBody extends Excercise {
+public class LowerBody extends Exercise {
 
 }
