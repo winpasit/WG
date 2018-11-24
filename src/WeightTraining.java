@@ -1,5 +1,5 @@
-public class WeightTraining {
+public class WeightTraining extends Training {
 	public WeightTraining() {
-		int x = 0;
+		
 	}
 }
