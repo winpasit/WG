@@ -1,3 +1,5 @@
+package major;
+
 
 public class User {
 	private double weight;
