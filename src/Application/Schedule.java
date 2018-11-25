@@ -39,7 +39,7 @@ public class Schedule extends Application {
 		
 		Scene scene = new Scene(new Group());
 		primaryStage.setTitle("Table View Sample");
-		primaryStage.setWidth(300);
+		primaryStage.setWidth(600);
 		primaryStage.setHeight(500);
  
         Label label = new Label("Schedule");
