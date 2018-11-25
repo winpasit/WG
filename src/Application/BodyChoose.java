@@ -4,10 +4,14 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
@@ -17,14 +21,28 @@ public class BodyChoose extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		 HBox hbox  = new HBox();
-		 hbox.setAlignment(Pos.CENTER);
-		 //hbox.setHgap(10);
-		 //hbox.setVgap(10);
-		 hbox.setPadding(new Insets(25, 25, 25, 25));
+		 Button ectomorph = new Button("ECTOMORPH");
+		 Button mesomorph = new Button("MESOMORPH");
+		 Button endomorph = new Button("ENDOMORPH");
 		 
-		 /*TextField weightTextField = new TextField();
-		 weightTextField.setPromptText("your weight");
-		 hbox.getChildren().add(weightTextField);*/
+		 hbox.setHgrow(ectomorph, Priority.ALWAYS);
+	     hbox.setHgrow(mesomorph, Priority.ALWAYS);
+	     hbox.setHgrow(endomorph, Priority.ALWAYS);
+		 
+		 ectomorph.setMaxWidth(Double.MAX_VALUE);
+	     mesomorph.setMaxWidth(Double.MAX_VALUE);
+	     endomorph.setMaxWidth(Double.MAX_VALUE);
+	     
+	     /*final ImageView selectedImage = new ImageView();   
+	     Image ect = new Image(BodyChoose.class.getResourceAsStream("C:\\Users\\Zongpol\\Desktop\\Capture.JPG"));
+
+	     selectedImage.setImage(ect);
+
+	     hbox.getChildren().addAll(selectedImage);*/
+	     
+		 
+		 hbox.getChildren().addAll(ectomorph, mesomorph, endomorph);
+		 hbox.setStyle("-fx-background-color:black;");
 		 
 		 Scene scene = new Scene(hbox, 350, 300);
 
