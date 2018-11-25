@@ -35,7 +35,12 @@ public class UserInput extends Application {
 		
 		Button btn = new Button("Next");
 		//add action of this button to go to BodyChoose page
+		btn.setOnAction(e -> {
+		    BodyChoose body = new BodyChoose();
+		    primaryStage.getScene().setRoot(body.getRootPane());
+		});
 		gp.add(btn, 1, 2);
+		
 		
 		//change style here
 		
