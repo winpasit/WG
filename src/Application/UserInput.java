@@ -35,6 +35,7 @@ public class UserInput extends Application {
 		
 		Button btn = new Button("Next");
 		//add action of this button to go to BodyChoose page
+		gp.add(btn, 1, 2);
 		
 		//change style here
 		
