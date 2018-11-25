@@ -122,7 +122,7 @@ public class Login extends Application {
 		Scene scene = new Scene(grid, 350, 300);
 
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("JavaFX Welcome");
+		primaryStage.setTitle("Workout Generator Login");
 		primaryStage.show();
 	}
 
