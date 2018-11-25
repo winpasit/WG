@@ -110,7 +110,11 @@ public class Login extends Application {
 				alert.setContentText("Welcome, "+userTextField.getText()+". Your Password is "+pwBox.getText()+".");
 				alert.showAndWait();
 				
+				/*UserInput user = new UserInput();
+			    primaryStage.getScene().setRoot(user.getRootPane());*/
+				
 			}
+			
 		});
 		exitBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -127,8 +131,7 @@ public class Login extends Application {
 	}
 
 	/**
-	 * @param args
-	 *            the command line arguments
+	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
 		launch(args);
