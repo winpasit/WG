@@ -42,6 +42,7 @@ public class UserInput extends Application {
 			primaryStage.getScene().setRoot(body.getRootPane());
 		});
 		gp.add(btn, 1, 2);
+		gp.setStyle("-fx-background-color:#CCFF99;");
 
 		// change style here
 
