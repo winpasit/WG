@@ -100,7 +100,7 @@ public class Login extends Application {
 				exitBtn.setPrefWidth(65);
 			}
 		});
-		// action when click button
+		// action when click button // change this to link to others pages
 		signinBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
