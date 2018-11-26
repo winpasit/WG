@@ -38,6 +38,7 @@ public class Table extends Application {
         TableColumn day6 = new TableColumn("Day6");
         TableColumn day7 = new TableColumn("Day7");
         
+        
         table.getColumns().addAll(day1, day2, day3, day4, day5, day6, day7);
  
         final VBox vbox = new VBox();

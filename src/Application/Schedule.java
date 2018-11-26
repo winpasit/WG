@@ -1,5 +1,6 @@
 package Application;
 
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -54,6 +55,11 @@ public class Schedule extends Application {
         TableColumn d5 = new TableColumn("Day 5");
         TableColumn d6 = new TableColumn("Day 6");
         TableColumn d7 = new TableColumn("Day 7");
+        
+        //table styles
+        table.setStyle("-fx-background-color: wheat; -fx-text-fill: black; -fx-font-weight: bold;"
+        		+ "-fx-alignment: CENTER_LEFT; -fx-border-color: black");
+        //
         
         table.getColumns().addAll(d1,d2,d3,d4,d5,d6,d7);
  
