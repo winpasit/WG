@@ -39,7 +39,8 @@ public class UserInput extends Application {
 		// add action of this button to go to BodyChoose page
 		btn.setOnAction(e -> {
 			BodyChoose body = new BodyChoose();
-			primaryStage.getScene().setRoot(body.getRootPane());
+			primaryStage.close();
+			body.start(primaryStage);
 		});
 		gp.add(btn, 1, 2);
 		gp.setStyle("-fx-background-color:#CCFF99;");
@@ -55,18 +56,6 @@ public class UserInput extends Application {
 	}
 
 	
-	/* public UserInput() {
-	  
-		 userPane = new GridPane();
-	  
-	  // build UI, register event handlers, etc etc
-	  
-	  }
-	  
-	  public Pane getRootPane() { 
-		  return userPane ; 
-	}*/
-	 
 	public static void main(String[] args) {
 		launch(args);
 	}

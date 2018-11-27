@@ -123,9 +123,9 @@ public class Login extends Application {
 					alert.setContentText(
 							"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
 					alert.showAndWait();
-					BodyChoose body = new BodyChoose();
+					UserInput user = new UserInput();
 					primaryStage.close();
-					body.start(primaryStage);
+					user.start(primaryStage);
 				}
 
 				

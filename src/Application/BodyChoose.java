@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
 
-	private final BorderPane bodyPane;
-
 	@Override
 	public void start(Stage primaryStage) {
 		VBox vb = new VBox();
@@ -39,15 +37,6 @@ public class BodyChoose extends Application {
 
 		hbox.getChildren().addAll(ectomorph, mesomorph, endomorph);
 		hbox.setStyle("-fx-background-color:black;");
-		/*
-		 * final ImageView selectedImage = new ImageView(); Image ect = new
-		 * Image(BodyChoose.class.getResourceAsStream(
-		 * "C:\\Users\\Zongpol\\Desktop\\Capture.JPG"));
-		 * 
-		 * selectedImage.setImage(ect);
-		 * 
-		 * hbox.getChildren().addAll(selectedImage);
-		 */
 
 		String image_path = ClassLoader.getSystemResource("images/").toString();
 		ImageView imagebdc = new ImageView(new Image(image_path + "bodychoose.jpg"));
@@ -62,19 +51,27 @@ public class BodyChoose extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("BodyChoose");
 		primaryStage.show();
+		
+		ectomorph.setOnAction(e -> {
+			Schedule sc = new Schedule();
+			primaryStage.close();
+			sc.start(primaryStage);
+		});
+		
+		mesomorph.setOnAction(e -> {
+			Schedule sc = new Schedule();
+			primaryStage.close();
+			sc.start(primaryStage);
+		});
+		
+		endomorph.setOnAction(e -> {
+			Schedule sc = new Schedule();
+			primaryStage.close();
+			sc.start(primaryStage);
+		});
 	}
 
-	public BodyChoose() {
-
-		bodyPane = new BorderPane();
-
-		// build UI, register event handlers, etc etc
-
-	}
-
-	public Pane getRootPane() {
-		return bodyPane;
-	}
+	
 
 	public static void main(String[] args) {
 		launch(args);
