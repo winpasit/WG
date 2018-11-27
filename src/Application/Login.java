@@ -24,28 +24,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Login extends Application {
-
-	/*public class ScreenController {
-	    private HashMap<String, Pane> screenMap = new HashMap<>();
-	    private Scene main;
-
-	    public ScreenController(Scene main) {
-	        this.main = main;
-	    }
-
-	    protected void addScreen(String name, Pane pane){
-	         screenMap.put(name, pane);
-	    }
-
-	    protected void removeScreen(String name){
-	        screenMap.remove(name);
-	    }
-
-	    protected void activate(String name){
-	        main.setRoot( screenMap.get(name) );
-	    }
-	}*/
-	
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -145,13 +123,12 @@ public class Login extends Application {
 					alert.setContentText(
 							"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
 					alert.showAndWait();
-					//removeScreen();
+					BodyChoose body = new BodyChoose();
+					primaryStage.close();
+					body.start(primaryStage);
 				}
 
-				/*
-				 * UserInput user = new UserInput();
-				 * primaryStage.getScene().setRoot(user.getRootPane());
-				 */
+				
 
 			}
 
