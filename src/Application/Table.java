@@ -1,5 +1,6 @@
 package Application;
 
+import major.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
@@ -12,7 +13,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
  
 public class Table extends Application {
- 
     private TableView table = new TableView();
     public static void main(String[] args) {
         launch(args);

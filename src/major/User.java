@@ -7,10 +7,8 @@ public class User {
 	private String bodyShape;
 	private String name;
 	
-	public User(double weight,int day,String bd) {
-		this.weight = weight;
-		this.dayPerWeek = day;
-		this.bodyShape = bd;
+	public User() {
+
 	}
 
 	
@@ -26,6 +24,10 @@ public class User {
 	public String getBodyShape() {
 		return this.bodyShape;
 	}
+	
+	public String getName() {
+		return this.name;
+	}
 	//<-getter
 	
 	//setter->
@@ -39,6 +41,9 @@ public class User {
 	
 	public void setBodyShape(String bodyShape) {
 		this.bodyShape = bodyShape;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

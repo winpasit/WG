@@ -1,5 +1,6 @@
 package Application;
 
+import major.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,9 +16,15 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class UserInput extends Application {
+	private User us;
+	public UserInput(User us) {
+		this.us = us;
+	}
 
 	@Override
 	public void start(Stage primaryStage) {
+		
+		
 		GridPane gp = new GridPane();
 		gp.setAlignment(Pos.CENTER);
 		gp.setHgap(10);
@@ -66,9 +73,11 @@ public class UserInput extends Application {
 				alert.showAndWait();
 			}
 			else {
-			BodyChoose body = new BodyChoose();
-			primaryStage.close();
-			body.start(primaryStage);
+				us.setWeight(Double.parseDouble(weightTextField.getText()));
+				us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
+				BodyChoose body = new BodyChoose(us);
+				primaryStage.close();
+				body.start(primaryStage);
 			}
 		});
 		gp.add(btn, 1, 2);

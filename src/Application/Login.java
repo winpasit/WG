@@ -1,7 +1,7 @@
 package Application;
 
+import major.*;
 import java.util.HashMap;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -27,7 +27,9 @@ public class Login extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-
+		
+		User us = new User();
+		
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setHgap(10);
@@ -117,13 +119,14 @@ public class Login extends Application {
 				alert.showAndWait();
 				}
 				else {
+					us.setName(userTextField.getText());
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Welcome Dialog");
 					alert.setHeaderText(null);
 					alert.setContentText(
 							"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
 					alert.showAndWait();
-					UserInput user = new UserInput();
+					UserInput user = new UserInput(us);
 					primaryStage.close();
 					user.start(primaryStage);
 				}

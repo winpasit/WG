@@ -1,5 +1,6 @@
 package Application;
 
+import major.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,6 +17,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Schedule extends Application {
+	
+	private User us;
+	public Schedule(User us) {
+		this.us = us;
+	}
 
 	@Override
 	public void start(Stage primaryStage) {

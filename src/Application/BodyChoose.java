@@ -1,5 +1,6 @@
 package Application;
 
+import major.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,11 +18,16 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
+	
+	private User us;
+	public BodyChoose(User us) {
+		this.us = us;
+	}
 
 	@Override
 	public void start(Stage primaryStage) {
+		
 		VBox vb = new VBox();
-
 		HBox hbox = new HBox();
 		Button ectomorph = new Button("ECTOMORPH");
 		Button mesomorph = new Button("MESOMORPH");
@@ -53,19 +59,22 @@ public class BodyChoose extends Application {
 		primaryStage.show();
 		
 		ectomorph.setOnAction(e -> {
-			Schedule sc = new Schedule();
+			us.setBodyShape("ectomorph");
+			Schedule sc = new Schedule(us);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
 		
 		mesomorph.setOnAction(e -> {
-			Schedule sc = new Schedule();
+			us.setBodyShape("mesomorph");
+			Schedule sc = new Schedule(us);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
 		
 		endomorph.setOnAction(e -> {
-			Schedule sc = new Schedule();
+			us.setBodyShape("endomorph");
+			Schedule sc = new Schedule(us);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
