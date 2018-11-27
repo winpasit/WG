@@ -30,7 +30,10 @@ public class UserInput extends Application {
 		gp.setHgap(10);
 		gp.setVgap(10);
 		gp.setPadding(new Insets(25, 25, 25, 25));
-
+		
+		//Label id = new Label(us.getName());
+		//gp.add(id, 0, 0);
+		
 		Label weight = new Label("Weight(kg) : ");
 		gp.add(weight, 0, 0);
 		TextField weightTextField = new TextField();
@@ -56,7 +59,7 @@ public class UserInput extends Application {
 						"Please fill in both weight and days per week");
 				alert.showAndWait();
 			}
-			else if (Integer.parseInt(dayTextField.getText()) <= 0 || Integer.parseInt(dayTextField.getText()) > 7 ) {
+			else if (Integer.parseInt(dayTextField.getText()) <= 0 || Integer.parseInt(dayTextField.getText()) > 7 /*|| dayTextField.getText().getClass() instanceof double*/) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
