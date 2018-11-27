@@ -107,14 +107,17 @@ public class Login extends Application {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Welcome Dialog");
 				alert.setHeaderText(null);
-				alert.setContentText("Welcome, "+userTextField.getText()+". Your Password is "+pwBox.getText()+".");
+				alert.setContentText(
+						"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
 				alert.showAndWait();
-				
-				/*UserInput user = new UserInput();
-			    primaryStage.getScene().setRoot(user.getRootPane());*/
-				
+
+				/*
+				 * UserInput user = new UserInput();
+				 * primaryStage.getScene().setRoot(user.getRootPane());
+				 */
+
 			}
-			
+
 		});
 		exitBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
