@@ -19,10 +19,10 @@ import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
 	
-	private User us;
-	public BodyChoose(User us) {
-		this.us = us;
-	}
+	//*private User us;
+	//*public BodyChoose(User us) {
+	//*this.us = us;
+	//*}
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -59,22 +59,22 @@ public class BodyChoose extends Application {
 		primaryStage.show();
 		
 		ectomorph.setOnAction(e -> {
-			us.setBodyShape("ectomorph");
-			Schedule sc = new Schedule(us);
+			//*us.setBodyShape("ectomorph");
+			Schedule sc = new Schedule(/*us*/);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
 		
 		mesomorph.setOnAction(e -> {
-			us.setBodyShape("mesomorph");
-			Schedule sc = new Schedule(us);
+			//*us.setBodyShape("mesomorph");
+			Schedule sc = new Schedule(/*us*/);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
 		
 		endomorph.setOnAction(e -> {
-			us.setBodyShape("endomorph");
-			Schedule sc = new Schedule(us);
+			//*us.setBodyShape("endomorph");
+			Schedule sc = new Schedule(/*us*/);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});

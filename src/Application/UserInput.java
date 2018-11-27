@@ -16,10 +16,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class UserInput extends Application {
-	private User us;
-	public UserInput(User us) {
-		this.us = us;
-	}
+	//*private User us;
+	//*public UserInput(User us) {
+	//*	this.us = us;
+	//*}
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -73,9 +73,9 @@ public class UserInput extends Application {
 				alert.showAndWait();
 			}
 			else {
-				us.setWeight(Double.parseDouble(weightTextField.getText()));
-				us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
-				BodyChoose body = new BodyChoose(us);
+				//*us.setWeight(Double.parseDouble(weightTextField.getText()));
+				//*us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
+				BodyChoose body = new BodyChoose(/*us*/);
 				primaryStage.close();
 				body.start(primaryStage);
 			}

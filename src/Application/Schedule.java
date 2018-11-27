@@ -18,10 +18,10 @@ import javafx.stage.Stage;
 
 public class Schedule extends Application {
 	
-	private User us;
-	public Schedule(User us) {
-		this.us = us;
-	}
+	//*private User us;
+	//*public Schedule(User us) {
+	//*this.us = us;
+	//*}
 
 	@Override
 	public void start(Stage primaryStage) {
