@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -21,6 +22,8 @@ public class BodyChoose extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+		 VBox vb = new VBox();
+		 
 		 HBox hbox  = new HBox();
 		 Button ectomorph = new Button("ECTOMORPH");
 		 Button mesomorph = new Button("MESOMORPH");
@@ -34,26 +37,26 @@ public class BodyChoose extends Application {
 	     mesomorph.setMaxWidth(Double.MAX_VALUE);
 	     endomorph.setMaxWidth(Double.MAX_VALUE);
 	     
+	     hbox.getChildren().addAll(ectomorph, mesomorph, endomorph);
+		 hbox.setStyle("-fx-background-color:black;");
 	     /*final ImageView selectedImage = new ImageView();   
 	     Image ect = new Image(BodyChoose.class.getResourceAsStream("C:\\Users\\Zongpol\\Desktop\\Capture.JPG"));
 
 	     selectedImage.setImage(ect);
 
 	     hbox.getChildren().addAll(selectedImage);*/
-	     
-	    //ImageView imageView = new ImageView(new Image(ClassLoader.getSystemResource("images/Endomorph.png").toString()));
-			
-		//imageView.setPreserveRatio(true);
-		//imageView.setFitWidth(150);
-		//imageView.setFitHeight(150);
-			
-	    //hbox.getChildren().addAll(imageView);
-	     
+	   
+	    String image_path = ClassLoader.getSystemResource("images/").toString();
+	    ImageView imagebdc = new ImageView(new Image(image_path+"bodychoose.jpg"));
+	    imagebdc.setPreserveRatio(true);
+	    imagebdc.setFitHeight(500);
+	    imagebdc.setFitWidth(500);
+	    
+	    
 		 
-		 hbox.getChildren().addAll(ectomorph, mesomorph, endomorph);
-		 hbox.setStyle("-fx-background-color:black;");
+		 vb.getChildren().addAll(hbox,imagebdc);
 		 
-		 Scene scene = new Scene(hbox, 350, 300);
+		 Scene scene = new Scene(vb, 500, 340);
 
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("BodyChoose");
