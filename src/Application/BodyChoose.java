@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
@@ -39,6 +40,14 @@ public class BodyChoose extends Application {
 	     selectedImage.setImage(ect);
 
 	     hbox.getChildren().addAll(selectedImage);*/
+	     
+	    //ImageView imageView = new ImageView(new Image(ClassLoader.getSystemResource("images/Endomorph.png").toString()));
+			
+		//imageView.setPreserveRatio(true);
+		//imageView.setFitWidth(150);
+		//imageView.setFitHeight(150);
+			
+	    //hbox.getChildren().addAll(imageView);
 	     
 		 
 		 hbox.getChildren().addAll(ectomorph, mesomorph, endomorph);
