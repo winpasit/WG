@@ -64,7 +64,8 @@ public class Login extends Application {
 		userName.setStyle("-fx-text-fill: white;");
 		pw.setStyle("-fx-text-fill: white;");
 		grid.setStyle("-fx-background-color:black;");
-		scenetitle.setStyle("-fx-font-size: 16px; -fx-font-family:\"Arial Black\";-fx-fill: lime;");
+		scenetitle.setStyle("-fx-font-size: 16px; -fx-font-family:\"Arial Black\";-fx-fill: lime;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n" + 
+				"");
 		signinBtn.setStyle(
 				"-fx-text-fill: green; -fx-font-weight: bold; -fx-font-family: \"Arial Narrow\"; -fx-background-color: white;");
 		exitBtn.setStyle(
@@ -129,9 +130,7 @@ public class Login extends Application {
 					UserInput user = new UserInput(/*us*/);
 					primaryStage.close();
 					user.start(primaryStage);
-				}
-
-				
+				}			
 
 			}
 
