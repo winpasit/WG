@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class UserInput extends Application {
@@ -24,15 +25,21 @@ public class UserInput extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
+		VBox vb = new VBox(8);
+		vb.setSpacing(5);
+		
+		Label id = new Label("Winny");//*us.getName()*/;
+		//id.setStyle("-fx-font-size:30px;");
+		id.setStyle("-fx-font:30px Tahoma");
+		vb.setMargin(id, new Insets(40, 0, 0, 30)); 
+		vb.getChildren().addAll(id);
+		
 		
 		GridPane gp = new GridPane();
 		gp.setAlignment(Pos.CENTER);
 		gp.setHgap(10);
 		gp.setVgap(10);
 		gp.setPadding(new Insets(25, 25, 25, 25));
-		
-		//Label id = new Label(us.getName());
-		//gp.add(id, 0, 0);
 		
 		Label weight = new Label("Weight(kg) : ");
 		gp.add(weight, 0, 0);
@@ -84,11 +91,12 @@ public class UserInput extends Application {
 			}
 		});
 		gp.add(btn, 1, 2);
-		gp.setStyle("-fx-background-color:beige;");
+		vb.setStyle("-fx-background-color:beige;");
+		vb.getChildren().addAll(gp);
 
 		// change style here
 
-		Scene scene = new Scene(gp, 350, 300);
+		Scene scene = new Scene(vb, 350, 300);
 
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Information");
