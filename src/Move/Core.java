@@ -13,11 +13,11 @@ public class Core extends Exercise{
 	 * 2.3)midCrunchers (1min)
 	 * 2.4)touchAndGos (1min)
 	 * 2.5)busters (1min)
-	 * 3.1)reverseCrunches (1min)
-	 * 3.2)hipOvers (1min)
-	 * 3.3)hipThrust (1min)
-	 * 3.4)legRaises (1min)
-	 * 3.5)flutterKicks (1min)
+	 * 3.1)legCrunches (1min)
+	 * 3.2)reverseHipThrust (1min)
+	 * 3.3)seatedBikes (1min)
+	 * 3.4)psychoCrunches (1min)
+	 * 3.5)scissorKicks (1min)
 	 */
 	
 	/* Calisthenics
@@ -48,11 +48,11 @@ public class Core extends Exercise{
 			this.getExerciseList().add("midCrunchers");
 			this.getExerciseList().add("touchAndGos");
 			this.getExerciseList().add("busters");
-			this.getExerciseList().add("reverseCrunches");
-			this.getExerciseList().add("hipOvers");
-			this.getExerciseList().add("hipThrust");
-			this.getExerciseList().add("legRaises");
-			this.getExerciseList().add("flutterKicks");
+			this.getExerciseList().add("legCrunches");
+			this.getExerciseList().add("reverseHipThrust");
+			this.getExerciseList().add("seatedBikes");
+			this.getExerciseList().add("psychoCrunches");
+			this.getExerciseList().add("scissorKicks");
 			
 			for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
 				this.getDefinitionList().add("1 min");
