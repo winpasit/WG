@@ -1,4 +1,5 @@
 package Move;
+import major.*;
 
 public class BicepsChest extends Exercise {
 	/* 1.1)wideCurl (1min)
@@ -12,7 +13,8 @@ public class BicepsChest extends Exercise {
 	 * 2.4)lyingRegularFly (1min)
 	 * 2.5)regularWideBenchPress (1min)
 	 */
-	public BicepsChest() {
+	public BicepsChest(Training t) {
+		super(t);
 		this.getExerciseList().add("wideCurl");
 		this.getExerciseList().add("hammerCurl");
 		this.getExerciseList().add("dragCurl");

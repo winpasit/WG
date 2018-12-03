@@ -1,4 +1,5 @@
 package Move;
+import major.*;
 
 public class Core extends Exercise{
 	/* WeightTraining
@@ -19,8 +20,68 @@ public class Core extends Exercise{
 	 * 3.5)flutterKicks (1min)
 	 */
 	
-	
 	/* Calisthenics
-	 * 
+	 * day2
+	 * 1.1)crucitix (40 reps)
+	 * 1.2)seatedInAndOuts (40 reps)
+	 * 1.3)legFlutters (40 reps)
+	 * 1.4)russianTwists (40 reps)
+	 * 1.5)crunches (40 reps)
+	 * day5
+	 * 1.1)c-SitHold (1 min)
+	 * 1.2)hangingl-Sit (1 min)
+	 * 1.3)plank (1 min)
+	 * 1.4)l-Sit (1 min)
+	 * 1.5)mountainCimblers (1 min)
 	 */
+	
+	public Core(Training t,int day) {
+		super(t);
+		if(t instanceof WeightTraining) {
+			this.getExerciseList().add("fullSitUpToToes");
+			this.getExerciseList().add("90DegreeSitUpToToes");
+			this.getExerciseList().add("toeTouches");
+			this.getExerciseList().add("rowBoats");
+			this.getExerciseList().add("speedCrunches");
+			this.getExerciseList().add("cSitHold");
+			this.getExerciseList().add("suitcase");
+			this.getExerciseList().add("midCrunchers");
+			this.getExerciseList().add("touchAndGos");
+			this.getExerciseList().add("busters");
+			this.getExerciseList().add("reverseCrunches");
+			this.getExerciseList().add("hipOvers");
+			this.getExerciseList().add("hipThrust");
+			this.getExerciseList().add("legRaises");
+			this.getExerciseList().add("flutterKicks");
+			
+			for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+				this.getDefinitionList().add("1 min");
+			}
+		}
+		
+		if(t instanceof Calisthenics) {
+			if(day == 2) {
+				this.getExerciseList().add("crucitix");
+				this.getExerciseList().add("seatedInAndOuts");
+				this.getExerciseList().add("legFlutters");
+				this.getExerciseList().add("russianTwists");
+				this.getExerciseList().add("crunches");
+				
+				for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+					this.getDefinitionList().add("40 reps");
+				}
+			}
+			if(day == 5) {
+				this.getExerciseList().add("c-SitHold");
+				this.getExerciseList().add("hangingl-Sit");
+				this.getExerciseList().add("plank");
+				this.getExerciseList().add("l-Sit");
+				this.getExerciseList().add("mountainCimblers");
+				
+				for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+					this.getDefinitionList().add("1 min");
+				}
+			}
+		}
+	}
 }

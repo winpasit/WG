@@ -1,13 +1,17 @@
 package Move;
 
 import java.util.ArrayList;
+import major.*;
 
 public class Exercise {
 	private ArrayList<String> exerciseList;
 	private ArrayList<String> definitionList;
-	public Exercise() {
-		exerciseList = new ArrayList<String>();
-		definitionList = new ArrayList<String>();
+	private Training t;
+	
+	public Exercise(Training t) {
+		this.t= t;
+		this.exerciseList = new ArrayList<String>();
+		this.definitionList = new ArrayList<String>();
 	}
 	
 	//getter of Array list
