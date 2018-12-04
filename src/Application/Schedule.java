@@ -6,36 +6,28 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class Schedule extends Application {
 	
-	//*private User us;
-	//*public Schedule(User us) {
-	//*this.us = us;
-	//*}
+	private User us;
+	public Schedule(User us) {
+		this.us = us;
+	}
 
 	@Override
 	public void start(Stage primaryStage) {
-		/*
-		 * GridPane grid = new GridPane(); grid.setAlignment(Pos.TOP_CENTER);
-		 * 
-		 * HBox hb = new HBox(35); hb.setPadding(new Insets(25, 25, 25, 25)); for(int i
-		 * = 1 ; i < 8 ; i++) { Label lb = new Label("Day "+ Integer.toString(i));
-		 * hb.getChildren().add(lb); } hb.setStyle("-fx-border-style: solid inside;" +
-		 * "-fx-border-width: 2;" + "-fx-border-insets: 5;" +
-		 * "-fx-border-color: black;");
-		 * 
-		 * grid.add(hb,0,0);
-		 */
 
 		TableView table = new TableView();
 
@@ -80,11 +72,30 @@ public class Schedule extends Application {
 
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
-		// Scene scene = new Scene(grid, 500, 500);
-		// primaryStage.setScene(scene);
-		// primaryStage.setTitle("Schedule");
-		// primaryStage.show();
+		
+		
+		VBox tuesday = new VBox();
+		tuesday.setSpacing(2);
+		VBox wednesday = new VBox();
+		wednesday.setSpacing(2);
+		VBox thursday = new VBox();
+		thursday.setSpacing(2);
+		VBox friday = new VBox();
+		friday.setSpacing(2);
+		VBox saturday = new VBox();
+		saturday.setSpacing(2);
+		VBox sunday = new VBox();
+		sunday.setSpacing(2);
+		
+		if(us.getBodyShape().equals("Ectomorph")) {
+			Calisthenics cali = new Calisthenics();
+			VBox monday = new VBox();
+			monday.setSpacing(2);
+			Button mon = new Button(cali.getDayExercise(1).getMoveName(0));
+			monday.getChildren().addAll(mon);
+			
+		}
+		//for (int i = 0; i < )
 	}
 
 	public static void main(String[] args) {

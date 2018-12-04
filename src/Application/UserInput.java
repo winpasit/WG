@@ -17,10 +17,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class UserInput extends Application {
-	//*private User us;
-	//*public UserInput(User us) {
-	//*	this.us = us;
-	//*}
+	private User us;
+	public UserInput(User us) {
+		this.us = us;
+	}
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -28,7 +28,7 @@ public class UserInput extends Application {
 		VBox vb = new VBox(8);
 		vb.setSpacing(5);
 		
-		Label id = new Label("Winny");//*us.getName()*/;
+		Label id = new Label(us.getName());;
 		//id.setStyle("-fx-font-size:30px;");
 		id.setStyle("-fx-font:30px Tahoma");
 		vb.setMargin(id, new Insets(40, 0, 0, 30)); 
@@ -83,9 +83,9 @@ public class UserInput extends Application {
 				alert.showAndWait();
 			}
 			else {
-				//*us.setWeight(Double.parseDouble(weightTextField.getText()));
-				//*us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
-				BodyChoose body = new BodyChoose(/*us*/);
+				us.setWeight(Double.parseDouble(weightTextField.getText()));
+				us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
+				BodyChoose body = new BodyChoose(us);
 				primaryStage.close();
 				body.start(primaryStage);
 			}

@@ -8,11 +8,11 @@ public class LowerBody extends Exercise {
 	 */
 	
 	public LowerBody() {
-		this.getExerciseList().add("moutainClimbers");
-		this.getExerciseList().add("plank");
-		this.getExerciseList().add("squats");
-		this.getExerciseList().add("jumpingJacks");
-		this.getExerciseList().add("boatHold");
+		this.getMoveList().add("moutainClimbers");
+		this.getMoveList().add("plank");
+		this.getMoveList().add("squats");
+		this.getMoveList().add("jumpingJacks");
+		this.getMoveList().add("boatHold");
 		
 		this.getDefinitionList().add("30 secs");
 		this.getDefinitionList().add("45 secs");

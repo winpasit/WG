@@ -15,18 +15,18 @@ public class BicepsChest extends Exercise {
 	 */
 	public BicepsChest() {
 		//super(t);
-		this.getExerciseList().add("wideCurl");
-		this.getExerciseList().add("hammerCurl");
-		this.getExerciseList().add("dragCurl");
-		this.getExerciseList().add("reverseCurl");
-		this.getExerciseList().add("straightCurl");
-		this.getExerciseList().add("valleyPress");
-		this.getExerciseList().add("standingValleyPress");
-		this.getExerciseList().add("reverseWideBenchPress");
-		this.getExerciseList().add("lyingRegularFly");
-		this.getExerciseList().add("regularWideBenchPress");
+		this.getMoveList().add("wideCurl");
+		this.getMoveList().add("hammerCurl");
+		this.getMoveList().add("dragCurl");
+		this.getMoveList().add("reverseCurl");
+		this.getMoveList().add("straightCurl");
+		this.getMoveList().add("valleyPress");
+		this.getMoveList().add("standingValleyPress");
+		this.getMoveList().add("reverseWideBenchPress");
+		this.getMoveList().add("lyingRegularFly");
+		this.getMoveList().add("regularWideBenchPress");
 		
-		for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 			this.getDefinitionList().add("1 min");
 		}
 	}

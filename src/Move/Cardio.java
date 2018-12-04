@@ -32,14 +32,14 @@ public class Cardio extends Exercise implements BurnFatable {
 
 	public Cardio(Training t) {
 		if(t instanceof WeightTraining) {
-			this.getExerciseList().add("run");
+			this.getMoveList().add("run");
 			this.getDefinitionList().add("40 min");
 		}else if(t instanceof Calisthenics) {
-			this.getExerciseList().add("burpees");
-			this.getExerciseList().add("jumpingJacks");
-			this.getExerciseList().add("inAndOuts");
-			this.getExerciseList().add("kneesTaps");
-			this.getExerciseList().add("jumpSquats");
+			this.getMoveList().add("burpees");
+			this.getMoveList().add("jumpingJacks");
+			this.getMoveList().add("inAndOuts");
+			this.getMoveList().add("kneesTaps");
+			this.getMoveList().add("jumpSquats");
 			
 			this.getDefinitionList().add("20 reps");
 			this.getDefinitionList().add("50 reps");

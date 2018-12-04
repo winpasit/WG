@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import major.*;
 
 public class Exercise {
-	private ArrayList<String> exerciseList;
+	private ArrayList<String> moveList;
 	private ArrayList<String> definitionList;
 	//private Training t;
 	
 	public Exercise() {
 		//this.t= t;
-		this.exerciseList = new ArrayList<String>();
+		this.moveList = new ArrayList<String>();
 		this.definitionList = new ArrayList<String>();
 	}
 	
 	//getter of Array list
-	public ArrayList<String> getExerciseList() {
-		return exerciseList;
+	public ArrayList<String> getMoveList() {
+		return moveList;
 	}
 	public ArrayList<String> getDefinitionList() {
 		return definitionList;
 	}
 	
 	//get excerciseName,definition by index
-	public String getExerciseName(int index) {
-		return this.exerciseList.get(index);
+	public String getMoveName(int index) {
+		return this.moveList.get(index);
 	}
 	
 	public String getDefinition(int index) {

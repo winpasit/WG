@@ -37,47 +37,47 @@ public class Core extends Exercise{
 	
 	public Core(Training t,int day) {
 		if(t instanceof WeightTraining) {
-			this.getExerciseList().add("fullSitUpToToes");
-			this.getExerciseList().add("90DegreeSitUpToToes");
-			this.getExerciseList().add("toeTouches");
-			this.getExerciseList().add("rowBoats");
-			this.getExerciseList().add("speedCrunches");
-			this.getExerciseList().add("cSitHold");
-			this.getExerciseList().add("suitcase");
-			this.getExerciseList().add("midCrunchers");
-			this.getExerciseList().add("touchAndGos");
-			this.getExerciseList().add("busters");
-			this.getExerciseList().add("legCrunches");
-			this.getExerciseList().add("reverseHipThrust");
-			this.getExerciseList().add("seatedBikes");
-			this.getExerciseList().add("psychoCrunches");
-			this.getExerciseList().add("scissorKicks");
+			this.getMoveList().add("fullSitUpToToes");
+			this.getMoveList().add("90DegreeSitUpToToes");
+			this.getMoveList().add("toeTouches");
+			this.getMoveList().add("rowBoats");
+			this.getMoveList().add("speedCrunches");
+			this.getMoveList().add("cSitHold");
+			this.getMoveList().add("suitcase");
+			this.getMoveList().add("midCrunchers");
+			this.getMoveList().add("touchAndGos");
+			this.getMoveList().add("busters");
+			this.getMoveList().add("legCrunches");
+			this.getMoveList().add("reverseHipThrust");
+			this.getMoveList().add("seatedBikes");
+			this.getMoveList().add("psychoCrunches");
+			this.getMoveList().add("scissorKicks");
 			
-			for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+			for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 				this.getDefinitionList().add("1 min");
 			}
 		}
 		
 		if(t instanceof Calisthenics) {
 			if(day == 2) {
-				this.getExerciseList().add("crucitix");
-				this.getExerciseList().add("seatedInAndOuts");
-				this.getExerciseList().add("legFlutters");
-				this.getExerciseList().add("russianTwists");
-				this.getExerciseList().add("crunches");
+				this.getMoveList().add("crucitix");
+				this.getMoveList().add("seatedInAndOuts");
+				this.getMoveList().add("legFlutters");
+				this.getMoveList().add("russianTwists");
+				this.getMoveList().add("crunches");
 				
-				for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+				for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 					this.getDefinitionList().add("40 reps");
 				}
 			}
 			if(day == 5) {
-				this.getExerciseList().add("c-SitHold");
-				this.getExerciseList().add("hangingl-Sit");
-				this.getExerciseList().add("plank");
-				this.getExerciseList().add("l-Sit");
-				this.getExerciseList().add("mountainCimblers");
+				this.getMoveList().add("c-SitHold");
+				this.getMoveList().add("hangingl-Sit");
+				this.getMoveList().add("plank");
+				this.getMoveList().add("l-Sit");
+				this.getMoveList().add("mountainCimblers");
 				
-				for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+				for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 					this.getDefinitionList().add("1 min");
 				}
 			}

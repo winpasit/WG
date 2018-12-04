@@ -28,7 +28,7 @@ public class Login extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
-		//* User us = new User();
+		User us = new User();
 		
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
@@ -120,14 +120,14 @@ public class Login extends Application {
 				alert.showAndWait();
 				}
 				else {
-					//*us.setName(userTextField.getText());
+					us.setName(userTextField.getText());
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Welcome Dialog");
 					alert.setHeaderText(null);
 					alert.setContentText(
 							"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
 					alert.showAndWait();
-					UserInput user = new UserInput(/*us*/);
+					UserInput user = new UserInput(us);
 					primaryStage.close();
 					user.start(primaryStage);
 				}			

@@ -14,19 +14,19 @@ public class ForearmBack extends Exercise{
 	 */
 	
 	public ForearmBack() {
-		this.getExerciseList().add("fingerWristsCurls");
-		this.getExerciseList().add("frontedRearRotations");
-		this.getExerciseList().add("speed180SideRotations");
-		this.getExerciseList().add("sideReverseWristsCurls");
-		this.getExerciseList().add("rearedFrontRotations");
-		this.getExerciseList().add("overheadShrugs");
-		this.getExerciseList().add("bentOverRow");
-		this.getExerciseList().add("yBacks");
-		this.getExerciseList().add("straightArmPullover");
-		this.getExerciseList().add("weightedSuperman");
+		this.getMoveList().add("fingerWristsCurls");
+		this.getMoveList().add("frontedRearRotations");
+		this.getMoveList().add("speed180SideRotations");
+		this.getMoveList().add("sideReverseWristsCurls");
+		this.getMoveList().add("rearedFrontRotations");
+		this.getMoveList().add("overheadShrugs");
+		this.getMoveList().add("bentOverRow");
+		this.getMoveList().add("yBacks");
+		this.getMoveList().add("straightArmPullover");
+		this.getMoveList().add("weightedSuperman");
 		
 		 
-		for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 			this.getDefinitionList().add("1 min");
 		}
 		

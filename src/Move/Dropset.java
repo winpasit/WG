@@ -8,11 +8,11 @@ public class Dropset extends Exercise{
 	 * 5)invertedRows (5,10,15)
 	 */
 	 public Dropset() {
-		 this.getExerciseList().add("muscleups");
-		 this.getExerciseList().add("pendLay");
-		 this.getExerciseList().add("pullups");
-		 this.getExerciseList().add("deadLift");
-		 this.getExerciseList().add("invertedRows");
+		 this.getMoveList().add("muscleups");
+		 this.getMoveList().add("pendLay");
+		 this.getMoveList().add("pullups");
+		 this.getMoveList().add("deadLift");
+		 this.getMoveList().add("invertedRows");
 		 
 		 this.getDefinitionList().add("(5,10,15) reps");
 		 this.getDefinitionList().add("(5,10,15) reps");

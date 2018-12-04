@@ -19,23 +19,23 @@ public class Legs extends Exercise{
 	 */
 	
 	public Legs() {
-		this.getExerciseList().add("alternatingLunge");
-		this.getExerciseList().add("jumpSquat");
-		this.getExerciseList().add("straightLeggedDeadlift");
-		this.getExerciseList().add("gobletSquat");
-		this.getExerciseList().add("pileSquatHoldCalfRaises");
-		this.getExerciseList().add("tripleThreats");
-		this.getExerciseList().add("jumpRaises");
-		this.getExerciseList().add("downwardOuterCalfRaises");
-		this.getExerciseList().add("squatCalfLift");
-		this.getExerciseList().add("tipToePulses");
-		this.getExerciseList().add("explosiveSquatJump");
-		this.getExerciseList().add("closeToWideSquatJump");
-		this.getExerciseList().add("speedSquat");
-		this.getExerciseList().add("squatPulses");
-		this.getExerciseList().add("squatHold");
+		this.getMoveList().add("alternatingLunge");
+		this.getMoveList().add("jumpSquat");
+		this.getMoveList().add("straightLeggedDeadlift");
+		this.getMoveList().add("gobletSquat");
+		this.getMoveList().add("pileSquatHoldCalfRaises");
+		this.getMoveList().add("tripleThreats");
+		this.getMoveList().add("jumpRaises");
+		this.getMoveList().add("downwardOuterCalfRaises");
+		this.getMoveList().add("squatCalfLift");
+		this.getMoveList().add("tipToePulses");
+		this.getMoveList().add("explosiveSquatJump");
+		this.getMoveList().add("closeToWideSquatJump");
+		this.getMoveList().add("speedSquat");
+		this.getMoveList().add("squatPulses");
+		this.getMoveList().add("squatHold");
 		
-		for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 			this.getDefinitionList().add("1 min");
 		}
 		

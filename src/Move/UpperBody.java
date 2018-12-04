@@ -8,11 +8,11 @@ public class UpperBody extends Exercise{
 	 * 5)Dips (10 reps)
 	 */
 	public UpperBody() {
-		this.getExerciseList().add("barCurl");
-		this.getExerciseList().add("diamondPushups");
-		this.getExerciseList().add("australianPullups");
-		this.getExerciseList().add("pikePushups");
-		this.getExerciseList().add("frontLever");
+		this.getMoveList().add("barCurl");
+		this.getMoveList().add("diamondPushups");
+		this.getMoveList().add("australianPullups");
+		this.getMoveList().add("pikePushups");
+		this.getMoveList().add("frontLever");
 		
 		this.getDefinitionList().add("10 reps");
 		this.getDefinitionList().add("12 reps");

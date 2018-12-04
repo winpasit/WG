@@ -2,11 +2,11 @@ package Move;
 
 public class PullingStrength extends Exercise{
 	public PullingStrength() {
-		this.getExerciseList().add("chinups");
-		this.getExerciseList().add("commandoPullups");
-		this.getExerciseList().add("closeGripPullups");
-		this.getExerciseList().add("pullups");
-		this.getExerciseList().add("wideGridPullups");
+		this.getMoveList().add("chinups");
+		this.getMoveList().add("commandoPullups");
+		this.getMoveList().add("closeGripPullups");
+		this.getMoveList().add("pullups");
+		this.getMoveList().add("wideGridPullups");
 		
 		this.getDefinitionList().add("15 reps");
 		this.getDefinitionList().add("10 reps");

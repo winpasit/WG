@@ -8,11 +8,11 @@ public class ExplosiveTraining extends Exercise{
 	 */
 	
 	public ExplosiveTraining() {
-		this.getExerciseList().add("pullups");
-		this.getExerciseList().add("pushups");
-		this.getExerciseList().add("dips");
-		this.getExerciseList().add("jumpSquats");
-		this.getExerciseList().add("burpees");
+		this.getMoveList().add("pullups");
+		this.getMoveList().add("pushups");
+		this.getMoveList().add("dips");
+		this.getMoveList().add("jumpSquats");
+		this.getMoveList().add("burpees");
 		 
 		this.getDefinitionList().add("10 reps");
 		this.getDefinitionList().add("10 reps");
