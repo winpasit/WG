@@ -1,7 +1,9 @@
 package Move;
 import major.*;
+import Interface. *;
 
-public class Cardio extends Exercise{
+public class Cardio extends Exercise implements BurnFatable {
+	int calories;
 	/* WeightTraining
 	 * run (40 min)
 	 */
@@ -14,7 +16,20 @@ public class Cardio extends Exercise{
 	 * 1.5)jumpSquats (20 reps)
 	 */
 	
+	public void burnFat(){ 
+		
+	       calories += 500; 
+	       
+	    } 
 	
+	public int getCalories() {
+		return calories;
+	}
+
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+
 	public Cardio(Training t) {
 		if(t instanceof WeightTraining) {
 			this.getExerciseList().add("run");

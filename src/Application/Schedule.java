@@ -44,8 +44,11 @@ public class Schedule extends Application {
 		primaryStage.setWidth(600);
 		primaryStage.setHeight(500);
 
-		Label label = new Label("Schedule");
+		Label label = new Label("Schedule / ");
 		label.setFont(new Font("Arial", 20));
+		
+		Label calories = new Label("Total Calories Burnt: ");
+	    calories.setFont(new Font("Arial", 20));
 
 		table.setEditable(true);
 
@@ -64,10 +67,14 @@ public class Schedule extends Application {
 
 		table.getColumns().addAll(d1, d2, d3, d4, d5, d6, d7);
 
+		HBox hbox = new HBox();
+		hbox.setSpacing(5);
+		hbox.getChildren().addAll(label, calories);
+		
 		VBox vbox = new VBox();
 		vbox.setSpacing(5);
 		vbox.setPadding(new Insets(10, 0, 0, 10));
-		vbox.getChildren().addAll(label, table);
+		vbox.getChildren().addAll(hbox, table);
 
 		((Group) scene.getRoot()).getChildren().addAll(vbox);
 
