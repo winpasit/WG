@@ -16,7 +16,6 @@ public class Cardio extends Exercise{
 	
 	
 	public Cardio(Training t) {
-		super(t);
 		if(t instanceof WeightTraining) {
 			this.getExerciseList().add("run");
 			this.getDefinitionList().add("40 min");

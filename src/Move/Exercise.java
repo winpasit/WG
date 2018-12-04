@@ -6,10 +6,10 @@ import major.*;
 public class Exercise {
 	private ArrayList<String> exerciseList;
 	private ArrayList<String> definitionList;
-	private Training t;
+	//private Training t;
 	
-	public Exercise(Training t) {
-		this.t= t;
+	public Exercise() {
+		//this.t= t;
 		this.exerciseList = new ArrayList<String>();
 		this.definitionList = new ArrayList<String>();
 	}

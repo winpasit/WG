@@ -36,7 +36,6 @@ public class Core extends Exercise{
 	 */
 	
 	public Core(Training t,int day) {
-		super(t);
 		if(t instanceof WeightTraining) {
 			this.getExerciseList().add("fullSitUpToToes");
 			this.getExerciseList().add("90DegreeSitUpToToes");

@@ -13,8 +13,8 @@ public class BicepsChest extends Exercise {
 	 * 2.4)lyingRegularFly (1min)
 	 * 2.5)regularWideBenchPress (1min)
 	 */
-	public BicepsChest(Training t) {
-		super(t);
+	public BicepsChest() {
+		//super(t);
 		this.getExerciseList().add("wideCurl");
 		this.getExerciseList().add("hammerCurl");
 		this.getExerciseList().add("dragCurl");

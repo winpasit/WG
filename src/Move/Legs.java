@@ -17,4 +17,27 @@ public class Legs extends Exercise{
 	 * 3.4)squatPulses
 	 * 3.5)squatHold
 	 */
+	
+	public Legs() {
+		this.getExerciseList().add("alternatingLunge");
+		this.getExerciseList().add("jumpSquat");
+		this.getExerciseList().add("straightLeggedDeadlift");
+		this.getExerciseList().add("gobletSquat");
+		this.getExerciseList().add("pileSquatHoldCalfRaises");
+		this.getExerciseList().add("tripleThreats");
+		this.getExerciseList().add("jumpRaises");
+		this.getExerciseList().add("downwardOuterCalfRaises");
+		this.getExerciseList().add("squatCalfLift");
+		this.getExerciseList().add("tipToePulses");
+		this.getExerciseList().add("explosiveSquatJump");
+		this.getExerciseList().add("closeToWideSquatJump");
+		this.getExerciseList().add("speedSquat");
+		this.getExerciseList().add("squatPulses");
+		this.getExerciseList().add("squatHold");
+		
+		for(int  i = 0 ; i < this.getExerciseList().size() ; i++) {
+			this.getDefinitionList().add("1 min");
+		}
+		
+	}
 }
