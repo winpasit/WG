@@ -2,7 +2,9 @@ package Application;
 
 import major.*;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javafx.application.Application;
@@ -17,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -53,7 +56,9 @@ public class Schedule extends Application {
         stage.setHeight(500);
         
         final Label label = new Label(us.getName() + " : " + us.getBodyShape());
-        label.setFont(new Font("Arial", 20));
+        label.setStyle("-fx-font-size: 24px; -fx-font-family:\"Arial Black\";-fx-fill: #1E4363;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n" + 
+				"");
+        
  
         TableColumn<Map, String> firstDataColumn = new TableColumn<>("Day 1");
         TableColumn<Map, String> secondDataColumn = new TableColumn<>("Day 2");
@@ -80,6 +85,16 @@ public class Schedule extends Application {
         seventhDataColumn.setMinWidth(180);
  
         TableView tableView = new TableView<>(generateDataInMap());
+        tableView.setStyle("-fx-background-color:brown;");
+        
+        firstDataColumn.setStyle("-fx-background-color:D9CBA3");
+        secondDataColumn.setStyle("-fx-background-color:#FCF2CB");
+        thirdDataColumn.setStyle("-fx-background-color:D9CBA3");
+        fourthDataColumn.setStyle("-fx-background-color:#FCF2CB");
+        fifthDataColumn.setStyle("-fx-background-color:D9CBA3");
+        sixthDataColumn.setStyle("-fx-background-color:#FCF2CB");
+        seventhDataColumn.setStyle("-fx-background-color:D9CBA3");
+        
  
         tableView.setEditable(true);
         tableView.getSelectionModel().setCellSelectionEnabled(true);
@@ -144,16 +159,16 @@ public class Schedule extends Application {
  
     			allData.add(dataRow);
         	}else if(us.getBodyShape().equals("mesomorph")) {
-    			WeightCalisthenics calis = new WeightCalisthenics();
+    			WeightCalisthenics wcalis = new WeightCalisthenics();
     			Map<String, String> dataRow = new HashMap<>();
     			
-    			String value1 = calis.getDayExercise(0).getMoveName(i) + "\t" + calis.getDayExercise(0).getDefinition(i);
-    			String value2 = calis.getDayExercise(1).getMoveName(i) + "\t" + calis.getDayExercise(1).getDefinition(i);
-    			String value3 = calis.getDayExercise(2).getMoveName(i) + "\t" + calis.getDayExercise(2).getDefinition(i);
-    			String value4 = calis.getDayExercise(3).getMoveName(i) + "\t" + calis.getDayExercise(3).getDefinition(i);
-    			String value5 = calis.getDayExercise(4).getMoveName(i) + "\t" + calis.getDayExercise(4).getDefinition(i);
-    			String value6 = calis.getDayExercise(5).getMoveName(i) + "\t" + calis.getDayExercise(5).getDefinition(i);
-    			String value7 = calis.getDayExercise(6).getMoveName(i) + "\t" + calis.getDayExercise(6).getDefinition(i);
+    			String value1 = wcalis.getDayExercise(0).getMoveName(i) + "\t" + wcalis.getDayExercise(0).getDefinition(i);
+    			String value2 = wcalis.getDayExercise(1).getMoveName(i) + "\t" + wcalis.getDayExercise(1).getDefinition(i);
+    			String value3 = wcalis.getDayExercise(2).getMoveName(i) + "\t" + wcalis.getDayExercise(2).getDefinition(i);
+    			String value4 = wcalis.getDayExercise(3).getMoveName(i) + "\t" + wcalis.getDayExercise(3).getDefinition(i);
+    			String value5 = wcalis.getDayExercise(4).getMoveName(i) + "\t" + wcalis.getDayExercise(4).getDefinition(i);
+    			String value6 = wcalis.getDayExercise(5).getMoveName(i) + "\t" + wcalis.getDayExercise(5).getDefinition(i);
+    			String value7 = wcalis.getDayExercise(6).getMoveName(i) + "\t" + wcalis.getDayExercise(6).getDefinition(i);
     			
     			
     			dataRow.put(Column1MapKey,value1);
@@ -165,17 +180,20 @@ public class Schedule extends Application {
     			dataRow.put(Column7MapKey,value7);
  
     			allData.add(dataRow);
+    			
+    			//Column7MapKey.setTooltip(new Tooltip("This column shows the first name"));
+    			
         	}else if(us.getBodyShape().equals("endomorph")) {
-    			WeightTraining calis = new WeightTraining();
+    			WeightTraining wt = new WeightTraining();
     			Map<String, String> dataRow = new HashMap<>();
     			
-    			String value1 = calis.getDayExercise(0).getMoveName(i) + "\t" + calis.getDayExercise(0).getDefinition(i);
-    			String value2 = calis.getDayExercise(1).getMoveName(i) + "\t" + calis.getDayExercise(1).getDefinition(i);
-    			String value3 = calis.getDayExercise(2).getMoveName(i) + "\t" + calis.getDayExercise(2).getDefinition(i);
-    			String value4 = calis.getDayExercise(3).getMoveName(i) + "\t" + calis.getDayExercise(3).getDefinition(i);
-    			String value5 = calis.getDayExercise(4).getMoveName(i) + "\t" + calis.getDayExercise(4).getDefinition(i);
-    			String value6 = calis.getDayExercise(5).getMoveName(i) + "\t" + calis.getDayExercise(5).getDefinition(i);
-    			String value7 = calis.getDayExercise(6).getMoveName(i) + "\t" + calis.getDayExercise(6).getDefinition(i);
+    			String value1 = wt.getDayExercise(0).getMoveName(i) + "\t" + wt.getDayExercise(0).getDefinition(i);
+    			String value2 = wt.getDayExercise(1).getMoveName(i) + "\t" + wt.getDayExercise(1).getDefinition(i);
+    			String value3 = wt.getDayExercise(2).getMoveName(i) + "\t" + wt.getDayExercise(2).getDefinition(i);
+    			String value4 = wt.getDayExercise(3).getMoveName(i) + "\t" + wt.getDayExercise(3).getDefinition(i);
+    			String value5 = wt.getDayExercise(4).getMoveName(i) + "\t" + wt.getDayExercise(4).getDefinition(i);
+    			String value6 = wt.getDayExercise(5).getMoveName(i) + "\t" + wt.getDayExercise(5).getDefinition(i);
+    			String value7 = wt.getDayExercise(6).getMoveName(i) + "\t" + wt.getDayExercise(6).getDefinition(i);
     			
     			
     			dataRow.put(Column1MapKey,value1);
