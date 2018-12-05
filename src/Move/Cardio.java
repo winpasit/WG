@@ -47,5 +47,9 @@ public class Cardio extends Exercise implements BurnFatable {
 			this.getDefinitionList().add("50 reps");
 			this.getDefinitionList().add("20 reps");
 		}
+		while(this.getMoveList().size() != 15) {
+			this.getMoveList().add("");
+			this.getDefinitionList().add("");
+		}
 	}
 }

@@ -29,5 +29,10 @@ public class BicepsChest extends Exercise {
 		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 			this.getDefinitionList().add("1 min");
 		}
+		
+		while(this.getMoveList().size() != 15) {
+			this.getMoveList().add("");
+			this.getDefinitionList().add("");
+		}
 	}
 }

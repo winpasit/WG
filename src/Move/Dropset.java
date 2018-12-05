@@ -20,6 +20,10 @@ public class Dropset extends Exercise{
 		 this.getDefinitionList().add("(5,10,15) reps");
 		 this.getDefinitionList().add("(5,10,15) reps");
 		 
+		 while(this.getMoveList().size() != 15) {
+				this.getMoveList().add("");
+				this.getDefinitionList().add("");
+			}
 	 }
 	
 }

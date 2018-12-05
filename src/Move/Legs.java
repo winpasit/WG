@@ -39,5 +39,10 @@ public class Legs extends Exercise{
 			this.getDefinitionList().add("1 min");
 		}
 		
+		while(this.getMoveList().size() != 15) {
+			this.getMoveList().add("");
+			this.getDefinitionList().add("");
+		}
+		
 	}
 }

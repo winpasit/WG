@@ -1,16 +1,25 @@
 package Application;
 
 import major.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -18,6 +27,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 public class Schedule extends Application {
 	
@@ -25,10 +35,167 @@ public class Schedule extends Application {
 	public Schedule(User us) {
 		this.us = us;
 	}
+	
+	public static final String Column1MapKey = "Day 1";
+    public static final String Column2MapKey = "Day 2";
+    public static final String Column3MapKey = "Day 3";
+    public static final String Column4MapKey = "Day 4";
+    public static final String Column5MapKey = "Day 5";
+    public static final String Column6MapKey = "Day 6";
+    public static final String Column7MapKey = "Day 7";
+    
+    //3
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle("Schedule");
+        stage.setWidth(1300);
+        stage.setHeight(500);
+        
+        final Label label = new Label(us.getName() + " : " + us.getBodyShape());
+        label.setFont(new Font("Arial", 20));
+ 
+        TableColumn<Map, String> firstDataColumn = new TableColumn<>("Day 1");
+        TableColumn<Map, String> secondDataColumn = new TableColumn<>("Day 2");
+        TableColumn<Map, String> thirdDataColumn = new TableColumn<>("Day 3");
+        TableColumn<Map, String> fourthDataColumn = new TableColumn<>("Day 4");
+        TableColumn<Map, String> fifthDataColumn = new TableColumn<>("Day 5");
+        TableColumn<Map, String> sixthDataColumn = new TableColumn<>("Day 6");
+        TableColumn<Map, String> seventhDataColumn = new TableColumn<>("Day 7");
+        
+ 
+        firstDataColumn.setCellValueFactory(new MapValueFactory(Column1MapKey));
+        firstDataColumn.setMinWidth(180);
+        secondDataColumn.setCellValueFactory(new MapValueFactory(Column2MapKey));
+        secondDataColumn.setMinWidth(180);
+        thirdDataColumn.setCellValueFactory(new MapValueFactory(Column3MapKey));
+        thirdDataColumn.setMinWidth(180);
+        fourthDataColumn.setCellValueFactory(new MapValueFactory(Column4MapKey));
+        fourthDataColumn.setMinWidth(180);
+        fifthDataColumn.setCellValueFactory(new MapValueFactory(Column5MapKey));
+        fifthDataColumn.setMinWidth(180);
+        sixthDataColumn.setCellValueFactory(new MapValueFactory(Column6MapKey));
+        sixthDataColumn.setMinWidth(180);
+        seventhDataColumn.setCellValueFactory(new MapValueFactory(Column7MapKey));
+        seventhDataColumn.setMinWidth(180);
+ 
+        TableView tableView = new TableView<>(generateDataInMap());
+ 
+        tableView.setEditable(true);
+        tableView.getSelectionModel().setCellSelectionEnabled(true);
+        tableView.getColumns().setAll(firstDataColumn, secondDataColumn,thirdDataColumn,fourthDataColumn,fifthDataColumn,sixthDataColumn,seventhDataColumn);
+        Callback<TableColumn<Map, String>, TableCell<Map, String>>
+            cellFactoryForMap = (TableColumn<Map, String> p) -> 
+                new TextFieldTableCell(new StringConverter() {
+                    @Override
+                        public String toString(Object t) {
+                        return t.toString();
+                    }
+                    @Override
+                    public Object fromString(String string) {
+                        return string;
+                    }
+            });
+        firstDataColumn.setCellFactory(cellFactoryForMap);
+        secondDataColumn.setCellFactory(cellFactoryForMap);
+        thirdDataColumn.setCellFactory(cellFactoryForMap);
+        fourthDataColumn.setCellFactory(cellFactoryForMap);
+        fifthDataColumn.setCellFactory(cellFactoryForMap);
+        sixthDataColumn.setCellFactory(cellFactoryForMap);
+        seventhDataColumn.setCellFactory(cellFactoryForMap);
+        
+        final VBox vbox = new VBox();
+ 
+        vbox.setSpacing(5);
+        vbox.setPadding(new Insets(10, 0, 0, 10));
+        vbox.getChildren().addAll(label, tableView);
+ 
+        ((Group) scene.getRoot()).getChildren().addAll(vbox);
+ 
+        stage.setScene(scene);
+ 
+        stage.show();
+    }
+ 
+    private ObservableList<Map> generateDataInMap() {
+        int max = 15;
+        ObservableList<Map> allData = FXCollections.observableArrayList();
+        for (int i = 0; i < max; i++) {
+        	if(us.getBodyShape().equals("ectomorph")) {
+    			Calisthenics calis = new Calisthenics();
+    			Map<String, String> dataRow = new HashMap<>();
+    			
+    			String value1 = calis.getDayExercise(0).getMoveName(i) + "\t" + calis.getDayExercise(0).getDefinition(i);
+    			String value2 = calis.getDayExercise(1).getMoveName(i) + "\t" + calis.getDayExercise(1).getDefinition(i);
+    			String value3 = calis.getDayExercise(2).getMoveName(i) + "\t" + calis.getDayExercise(2).getDefinition(i);
+    			String value4 = calis.getDayExercise(3).getMoveName(i) + "\t" + calis.getDayExercise(3).getDefinition(i);
+    			String value5 = calis.getDayExercise(4).getMoveName(i) + "\t" + calis.getDayExercise(4).getDefinition(i);
+    			String value6 = calis.getDayExercise(5).getMoveName(i) + "\t" + calis.getDayExercise(5).getDefinition(i);
+    			String value7 = calis.getDayExercise(6).getMoveName(i) + "\t" + calis.getDayExercise(6).getDefinition(i);
+    			
+    			
+    			dataRow.put(Column1MapKey,value1);
+    			dataRow.put(Column2MapKey,value2);
+    			dataRow.put(Column3MapKey,value3);
+    			dataRow.put(Column4MapKey,value4);
+    			dataRow.put(Column5MapKey,value5);
+    			dataRow.put(Column6MapKey,value6);
+    			dataRow.put(Column7MapKey,value7);
+ 
+    			allData.add(dataRow);
+        	}else if(us.getBodyShape().equals("mesomorph")) {
+    			WeightCalisthenics calis = new WeightCalisthenics();
+    			Map<String, String> dataRow = new HashMap<>();
+    			
+    			String value1 = calis.getDayExercise(0).getMoveName(i) + "\t" + calis.getDayExercise(0).getDefinition(i);
+    			String value2 = calis.getDayExercise(1).getMoveName(i) + "\t" + calis.getDayExercise(1).getDefinition(i);
+    			String value3 = calis.getDayExercise(2).getMoveName(i) + "\t" + calis.getDayExercise(2).getDefinition(i);
+    			String value4 = calis.getDayExercise(3).getMoveName(i) + "\t" + calis.getDayExercise(3).getDefinition(i);
+    			String value5 = calis.getDayExercise(4).getMoveName(i) + "\t" + calis.getDayExercise(4).getDefinition(i);
+    			String value6 = calis.getDayExercise(5).getMoveName(i) + "\t" + calis.getDayExercise(5).getDefinition(i);
+    			String value7 = calis.getDayExercise(6).getMoveName(i) + "\t" + calis.getDayExercise(6).getDefinition(i);
+    			
+    			
+    			dataRow.put(Column1MapKey,value1);
+    			dataRow.put(Column2MapKey,value2);
+    			dataRow.put(Column3MapKey,value3);
+    			dataRow.put(Column4MapKey,value4);
+    			dataRow.put(Column5MapKey,value5);
+    			dataRow.put(Column6MapKey,value6);
+    			dataRow.put(Column7MapKey,value7);
+ 
+    			allData.add(dataRow);
+        	}else if(us.getBodyShape().equals("endomorph")) {
+    			WeightTraining calis = new WeightTraining();
+    			Map<String, String> dataRow = new HashMap<>();
+    			
+    			String value1 = calis.getDayExercise(0).getMoveName(i) + "\t" + calis.getDayExercise(0).getDefinition(i);
+    			String value2 = calis.getDayExercise(1).getMoveName(i) + "\t" + calis.getDayExercise(1).getDefinition(i);
+    			String value3 = calis.getDayExercise(2).getMoveName(i) + "\t" + calis.getDayExercise(2).getDefinition(i);
+    			String value4 = calis.getDayExercise(3).getMoveName(i) + "\t" + calis.getDayExercise(3).getDefinition(i);
+    			String value5 = calis.getDayExercise(4).getMoveName(i) + "\t" + calis.getDayExercise(4).getDefinition(i);
+    			String value6 = calis.getDayExercise(5).getMoveName(i) + "\t" + calis.getDayExercise(5).getDefinition(i);
+    			String value7 = calis.getDayExercise(6).getMoveName(i) + "\t" + calis.getDayExercise(6).getDefinition(i);
+    			
+    			
+    			dataRow.put(Column1MapKey,value1);
+    			dataRow.put(Column2MapKey,value2);
+    			dataRow.put(Column3MapKey,value3);
+    			dataRow.put(Column4MapKey,value4);
+    			dataRow.put(Column5MapKey,value5);
+    			dataRow.put(Column6MapKey,value6);
+    			dataRow.put(Column7MapKey,value7);
+ 
+    			allData.add(dataRow);
+        	}
+        }
+        return allData;
+    }
 
-	@Override
-	public void start(Stage primaryStage) {
-
+	//@Override
+	//public void start(Stage primaryStage) {
+		
+		//1
 		/*TableView table = new TableView();
 
 		Scene scene = new Scene(new Group());
@@ -102,8 +269,8 @@ public class Schedule extends Application {
 		primaryStage.show();
 		*/
 		
-		
-		GridPane grid = new GridPane();
+		//2
+		/*GridPane grid = new GridPane();
 		grid.setPadding(new Insets(30, 30, 30, 30));
 		grid.setVgap(20);
 		//grid.setHgap(40);
@@ -120,7 +287,16 @@ public class Schedule extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Schedule");
 		primaryStage.show();
-	}
+		*/
+		
+	
+		
+		
+		
+		
+		
+		
+	//}
 
 	public static void main(String[] args) {
 		launch(args);

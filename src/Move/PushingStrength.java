@@ -14,5 +14,10 @@ public class PushingStrength extends Exercise{
 		this.getDefinitionList().add("30 reps");
 		this.getDefinitionList().add("20 reps");
 		this.getDefinitionList().add("30 reps");
+		
+		while(this.getMoveList().size() != 15) {
+			this.getMoveList().add("");
+			this.getDefinitionList().add("");
+		}
 	}
 }

@@ -11,5 +11,10 @@ public class Techniques extends Exercise{
 		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 			this.getDefinitionList().add("10 mins");
 		}
+		
+		while(this.getMoveList().size() != 15) {
+			this.getMoveList().add("");
+			this.getDefinitionList().add("");
+		}
 	}
 }
