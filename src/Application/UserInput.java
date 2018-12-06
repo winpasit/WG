@@ -1,7 +1,11 @@
 package Application;
 
 import major.*;
+
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -21,16 +26,30 @@ public class UserInput extends Application {
 	public UserInput(User us) {
 		this.us = us;
 	}
+	
+	public boolean isInteger( String input )
+	{
+	   try
+	   {
+	      Integer.parseInt( input );
+	      return true;
+	   }
+	   catch( Exception e )
+	   {
+	      return false;
+	   }
+	}
+	
 
 	@Override
 	public void start(Stage primaryStage) {
 		
-		VBox vb = new VBox(8);
-		vb.setSpacing(5);
+		VBox vb = new VBox(20);
+		vb.setSpacing(20);
 		
 		Label id = new Label(us.getName());;
 		//id.setStyle("-fx-font-size:30px;");
-		id.setStyle("-fx-font:30px Tahoma");
+		id.setStyle("-fx-font:60px Tahoma");
 		vb.setMargin(id, new Insets(40, 0, 0, 30)); 
 		vb.getChildren().addAll(id);
 		
@@ -56,8 +75,65 @@ public class UserInput extends Application {
 		
 
 		Button btn = new Button("Next");
+		
+		// add handler
+		dayTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent ke) {
+				if (ke.getCode() == KeyCode.ENTER) {
+					if (!isInteger(weightTextField.getText()) || !isInteger(dayTextField.getText())) {
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Error Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText(
+								"Please be reasonable");
+						alert.showAndWait();
+					}
+					if (weightTextField.getText().equals("") || dayTextField.getText().equals("")) {
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Error Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText(
+								"Please fill in both weight and days per week");
+						alert.showAndWait();
+					}
+					else if (Integer.parseInt(dayTextField.getText()) <= 0 || Integer.parseInt(dayTextField.getText()) > 7 /*|| dayTextField.getText().getClass() instanceof double*/) {
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Error Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText(
+								"Invalid day(s) per week");
+						alert.showAndWait();
+					}
+					else if (Integer.parseInt(weightTextField.getText()) <= 0 || Integer.parseInt(weightTextField.getText()) > 200) {
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Error Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText(
+								"Please fill in reasonable weight");
+						alert.showAndWait();
+					}
+					else {
+						us.setWeight(Double.parseDouble(weightTextField.getText()));
+						us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
+						BodyChoose body = new BodyChoose(us);
+						primaryStage.close();
+						body.start(primaryStage);
+					}
+				}
+			}
+		});
+					
 		// add action of this button to go to BodyChoose page
 		btn.setOnAction(e -> {
+			if (!isInteger(weightTextField.getText()) || !isInteger(dayTextField.getText())) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Error Dialog");
+				alert.setHeaderText(null);
+				alert.setContentText(
+						"Please be reasonable");
+				alert.showAndWait();
+			}
 			if (weightTextField.getText().equals("") || dayTextField.getText().equals("")) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
@@ -74,7 +150,7 @@ public class UserInput extends Application {
 						"Invalid day(s) per week");
 				alert.showAndWait();
 			}
-			else if (Integer.parseInt(weightTextField.getText()) <= 0) {
+			else if (Integer.parseInt(weightTextField.getText()) <= 0 || Integer.parseInt(weightTextField.getText()) > 200) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
@@ -96,7 +172,7 @@ public class UserInput extends Application {
 
 		// change style here
 
-		Scene scene = new Scene(vb, 350, 300);
+		Scene scene = new Scene(vb, 600, 400);
 
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Information");

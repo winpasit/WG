@@ -32,9 +32,9 @@ public class Login extends Application {
 		
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
-		grid.setHgap(10);
-		grid.setVgap(10);
-		grid.setPadding(new Insets(25, 25, 25, 25));
+		grid.setHgap(30);
+		grid.setVgap(20);
+		grid.setPadding(new Insets(50, 50, 50, 50));
 
 		Text scenetitle = new Text("Welcome to Workout Generator");
 		grid.add(scenetitle, 0, 0, 2, 1);
@@ -53,10 +53,10 @@ public class Login extends Application {
 
 		HBox hbBtn = new HBox(10);
 		hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
-		Button signinBtn = new Button("Sign in");
-		signinBtn.setPrefWidth(65);
+		Button signinBtn = new Button("Sign up");
+		signinBtn.setPrefWidth(100);
 		Button exitBtn = new Button("Exit");
-		exitBtn.setPrefWidth(65);
+		exitBtn.setPrefWidth(100);
 		hbBtn.getChildren().addAll(signinBtn, exitBtn);
 		grid.add(hbBtn, 1, 4);
 
@@ -64,7 +64,7 @@ public class Login extends Application {
 		userName.setStyle("-fx-text-fill: white;");
 		pw.setStyle("-fx-text-fill: white;");
 		grid.setStyle("-fx-background-color:black;");
-		scenetitle.setStyle("-fx-font-size: 16px; -fx-font-family:\"Arial Black\";-fx-fill: lime;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n" + 
+		scenetitle.setStyle("-fx-font-size: 30px; -fx-font-family:\"Arial Black\";-fx-fill: lime;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n" + 
 				"");
 		signinBtn.setStyle(
 				"-fx-text-fill: green; -fx-font-weight: bold; -fx-font-family: \"Arial Narrow\"; -fx-background-color: white;");
@@ -81,29 +81,58 @@ public class Login extends Application {
 				}
 			}
 		});
+		
+		pwBox.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent ky) {
+				if (ky.getCode() == KeyCode.ENTER) {
+					if (userTextField.getText().equals("") || pwBox.getText().equals("")) {
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Error Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText(
+								"Please fill in both username and password");
+						alert.showAndWait();
+						}
+						else {
+							us.setName(userTextField.getText());
+							Alert alert = new Alert(AlertType.INFORMATION);
+							alert.setTitle("Welcome Dialog");
+							alert.setHeaderText(null);
+							alert.setContentText(
+									"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
+							alert.showAndWait();
+							UserInput user = new UserInput(us);
+							primaryStage.close();
+							user.start(primaryStage);
+						}	
+				}
+			}
+		});
+		
 		// change button width when mouse over
 		signinBtn.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				signinBtn.setPrefWidth(75);
+				signinBtn.setPrefWidth(115);
 			}
 		});
 		signinBtn.setOnMouseExited(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				signinBtn.setPrefWidth(65);
+				signinBtn.setPrefWidth(100);
 			}
 		});
 		exitBtn.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				exitBtn.setPrefWidth(75);
+				exitBtn.setPrefWidth(115);
 			}
 		});
 		exitBtn.setOnMouseExited(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				exitBtn.setPrefWidth(65);
+				exitBtn.setPrefWidth(100);
 			}
 		});
 		// action when click button // change this to link to others pages
@@ -142,7 +171,7 @@ public class Login extends Application {
 			}
 		});
 
-		Scene scene = new Scene(grid, 350, 300);
+		Scene scene = new Scene(grid, 900, 600);
 
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Workout Generator Login");
