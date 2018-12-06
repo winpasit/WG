@@ -82,7 +82,8 @@ public class Schedule extends Application {
 						StackPane root = new StackPane();
 						String vid = "videos\\Calisthenics/muscleups.mp4";
 						
-						MediaPlayer player = new MediaPlayer( new Media(getClass().getResource(vid).toExternalForm()));
+						String image_path = ClassLoader.getSystemResource("images/").toString();
+						MediaPlayer player = new MediaPlayer( new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
 				        MediaView mediaView = new MediaView(player);
 				        root.getChildren().add( mediaView);
 
