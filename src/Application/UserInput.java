@@ -63,7 +63,6 @@ public class UserInput extends Application {
 		Label weight = new Label("Weight(kg) : ");
 		gp.add(weight, 0, 0);
 		TextField weightTextField = new TextField();
-
 		weightTextField.setPromptText("your weight");
 		gp.add(weightTextField, 1, 0);
 
@@ -88,7 +87,7 @@ public class UserInput extends Application {
 						alert.setContentText(
 								"Please be reasonable");
 						alert.showAndWait();
-					}
+					} else {
 					if (weightTextField.getText().equals("") || dayTextField.getText().equals("")) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
@@ -105,7 +104,7 @@ public class UserInput extends Application {
 								"Invalid day(s) per week");
 						alert.showAndWait();
 					}
-					else if (Integer.parseInt(weightTextField.getText()) <= 0 || Integer.parseInt(weightTextField.getText()) > 200) {
+					else if (Integer.parseInt(weightTextField.getText()) <= 20 || Integer.parseInt(weightTextField.getText()) > 200) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
@@ -120,6 +119,7 @@ public class UserInput extends Application {
 						primaryStage.close();
 						body.start(primaryStage);
 					}
+					}
 				}
 			}
 		});
@@ -133,7 +133,7 @@ public class UserInput extends Application {
 				alert.setContentText(
 						"Please be reasonable");
 				alert.showAndWait();
-			}
+			} else {
 			if (weightTextField.getText().equals("") || dayTextField.getText().equals("")) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
@@ -164,6 +164,7 @@ public class UserInput extends Application {
 				BodyChoose body = new BodyChoose(us);
 				primaryStage.close();
 				body.start(primaryStage);
+			}
 			}
 		});
 		gp.add(btn, 1, 2);

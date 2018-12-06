@@ -10,23 +10,33 @@ import java.util.Map;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -58,6 +68,35 @@ public class Schedule extends Application {
         final Label label = new Label(us.getName() + " : " + us.getBodyShape());
         label.setStyle("-fx-font-size: 24px; -fx-font-family:\"Arial Black\";-fx-fill: #1E4363;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n" + 
 				"");
+        
+        TextField movename = new TextField();
+        movename.setPromptText("Enter move name");
+        //movename.setPrefWidth(150);
+        
+        movename.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent ke) {
+				if (ke.getCode() == KeyCode.ENTER) {
+					if (movename.getText().equals("muscleups")) {
+						
+						StackPane root = new StackPane();
+						String vid = "videos\\Calisthenics/muscleups.mp4";
+						
+						MediaPlayer player = new MediaPlayer( new Media(getClass().getResource(vid).toExternalForm()));
+				        MediaView mediaView = new MediaView(player);
+				        root.getChildren().add( mediaView);
+
+				        Scene scene = new Scene(root, 1024, 768);
+				        
+				        stage.setTitle("Muscleups");
+				        stage.setScene(scene);
+				        stage.show();
+
+				        player.play();
+					}
+				}
+			}
+		});
         
  
         TableColumn<Map, String> firstDataColumn = new TableColumn<>("Day 1");
@@ -120,10 +159,14 @@ public class Schedule extends Application {
         seventhDataColumn.setCellFactory(cellFactoryForMap);
         
         final VBox vbox = new VBox();
+        final HBox hbox = new HBox();
+        
+        hbox.setSpacing(15);
+        hbox.getChildren().addAll(label, movename);
  
         vbox.setSpacing(5);
         vbox.setPadding(new Insets(10, 0, 0, 10));
-        vbox.getChildren().addAll(label, tableView);
+        vbox.getChildren().addAll(hbox, tableView);
  
         ((Group) scene.getRoot()).getChildren().addAll(vbox);
  
