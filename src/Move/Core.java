@@ -22,7 +22,7 @@ public class Core extends Exercise{
 	
 	/* Calisthenics
 	 * day2
-	 * 1.1)crucitix (40 reps)
+	 * 1.1)crucifix (40 reps)
 	 * 1.2)seatedInAndOuts (40 reps)
 	 * 1.3)legFlutters (40 reps)
 	 * 1.4)russianTwists (40 reps)
@@ -60,7 +60,7 @@ public class Core extends Exercise{
 		
 		if(t instanceof Calisthenics) {
 			if(day == 2) {
-				this.getMoveList().add("crucitix");
+				this.getMoveList().add("crucifix");
 				this.getMoveList().add("seatedInAndOuts");
 				this.getMoveList().add("legFlutters");
 				this.getMoveList().add("russianTwists");
