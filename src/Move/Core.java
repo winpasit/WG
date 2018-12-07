@@ -75,7 +75,7 @@ public class Core extends Exercise{
 				this.getMoveList().add("Hanging L-Sit");
 				this.getMoveList().add("Plank");
 				this.getMoveList().add("L-Sit");
-				this.getMoveList().add("Mountain Cimblers");
+				this.getMoveList().add("Mountain Climblers");
 				
 				for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 					this.getDefinitionList().add("1 min");
