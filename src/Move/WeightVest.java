@@ -8,7 +8,7 @@ public class WeightVest extends Exercise{
 	 */
 	public WeightVest() {
 		this.getMoveList().add("Pullups");
-		this.getMoveList().add("Rings Dips");
+		this.getMoveList().add("Ring Dips");
 		this.getMoveList().add("Pushups");
 		this.getMoveList().add("Full Planche");
 		this.getMoveList().add("Front Lever");
