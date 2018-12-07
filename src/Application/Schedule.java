@@ -79,10 +79,10 @@ public class Schedule extends Application {
 			@Override
 			public void handle(KeyEvent ke) {
 				if (ke.getCode() == KeyCode.ENTER) {
-					VideoPlayer vp = new VideoPlayer(us,movename.getText());
+					VideoPlayer vp = new VideoPlayer(us, movename.getText());
 					stage.close();
 					vp.start(stage);
-				}	
+				}
 			}
 		});
 

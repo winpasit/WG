@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
 	
+	
 	private User us;
 	public BodyChoose(User us) {
 		this.us = us;
