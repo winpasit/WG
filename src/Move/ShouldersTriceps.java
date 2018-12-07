@@ -14,16 +14,16 @@ public class ShouldersTriceps extends Exercise {
 	 */
 	
 	public ShouldersTriceps() {
-		this.getMoveList().add("reverseFly");
-		this.getMoveList().add("sideLateralRaise");
-		this.getMoveList().add("frontRaise");
-		this.getMoveList().add("uprightRow");
-		this.getMoveList().add("arnoldPress");
-		this.getMoveList().add("tricepPress");
-		this.getMoveList().add("kickbacks");
-		this.getMoveList().add("skullCrushers");
-		this.getMoveList().add("tatePress");
-		this.getMoveList().add("closeGripBenchPress");
+		this.getMoveList().add("Reverse Fly");
+		this.getMoveList().add("Side Lateral Raise");
+		this.getMoveList().add("Front Raise");
+		this.getMoveList().add("Upright Row");
+		this.getMoveList().add("Arnold Press");
+		this.getMoveList().add("Tricep Press");
+		this.getMoveList().add("Kickbacks");
+		this.getMoveList().add("Skull Crushers");
+		this.getMoveList().add("TatePress");
+		this.getMoveList().add("Closegrip BenchPress");
 		
 		
 		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {

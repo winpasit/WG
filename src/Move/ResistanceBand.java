@@ -9,11 +9,11 @@ public class ResistanceBand extends Exercise{
 	 */
 	
 	public ResistanceBand(){
-		this.getMoveList().add("pushups");
-		this.getMoveList().add("squats");
-		this.getMoveList().add("pullUps");
-		this.getMoveList().add("tricepsExtensions");
-		this.getMoveList().add("handStandPushUps");
+		this.getMoveList().add("Pushups");
+		this.getMoveList().add("Squats");
+		this.getMoveList().add("PullUps");
+		this.getMoveList().add("Triceps Extensions");
+		this.getMoveList().add("Handstand PushUps");
 		
 		this.getDefinitionList().add("10 reps");
 		this.getDefinitionList().add("10 reps");

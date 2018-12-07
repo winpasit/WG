@@ -66,21 +66,21 @@ public class UserInput extends Application {
 		weightTextField.setPromptText("your weight");
 		gp.add(weightTextField, 1, 0);
 
-		Label dayPerWeek = new Label("day per week : ");
-		gp.add(dayPerWeek, 0, 1);
-		TextField dayTextField = new TextField();
-		dayTextField.setPromptText("the number of day(s) active");
-		gp.add(dayTextField, 1, 1);
+		Label height = new Label("Height(cm) : ");
+		gp.add(height, 0, 1);
+		TextField heightTextfield = new TextField();
+		heightTextfield.setPromptText("your height");
+		gp.add(heightTextfield, 1, 1);
 		
 
 		Button btn = new Button("Next");
 		
 		// add handler
-		dayTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		heightTextfield.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent ke) {
 				if (ke.getCode() == KeyCode.ENTER) {
-					if (!isInteger(weightTextField.getText()) || !isInteger(dayTextField.getText())) {
+					if (!isInteger(weightTextField.getText()) || !isInteger(heightTextfield.getText())) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
@@ -88,7 +88,7 @@ public class UserInput extends Application {
 								"Please be reasonable");
 						alert.showAndWait();
 					} else {
-					if (weightTextField.getText().equals("") || dayTextField.getText().equals("")) {
+					if (weightTextField.getText().equals("") || heightTextfield.getText().equals("")) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
@@ -96,7 +96,7 @@ public class UserInput extends Application {
 								"Please fill in both weight and days per week");
 						alert.showAndWait();
 					}
-					else if (Integer.parseInt(dayTextField.getText()) <= 0 || Integer.parseInt(dayTextField.getText()) > 7 /*|| dayTextField.getText().getClass() instanceof double*/) {
+					else if (Integer.parseInt(heightTextfield.getText()) <= 140 || Integer.parseInt(heightTextfield.getText()) > 250 /*|| dayTextField.getText().getClass() instanceof double*/) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
@@ -104,7 +104,7 @@ public class UserInput extends Application {
 								"Invalid day(s) per week");
 						alert.showAndWait();
 					}
-					else if (Integer.parseInt(weightTextField.getText()) <= 20 || Integer.parseInt(weightTextField.getText()) > 200) {
+					else if (Integer.parseInt(weightTextField.getText()) <= 30 || Integer.parseInt(weightTextField.getText()) > 200) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
@@ -114,7 +114,7 @@ public class UserInput extends Application {
 					}
 					else {
 						us.setWeight(Double.parseDouble(weightTextField.getText()));
-						us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
+						us.setHeight(Integer.parseInt(heightTextfield.getText()));
 						BodyChoose body = new BodyChoose(us);
 						primaryStage.close();
 						body.start(primaryStage);
@@ -126,7 +126,7 @@ public class UserInput extends Application {
 					
 		// add action of this button to go to BodyChoose page
 		btn.setOnAction(e -> {
-			if (!isInteger(weightTextField.getText()) || !isInteger(dayTextField.getText())) {
+			if (!isInteger(weightTextField.getText()) || !isInteger(heightTextfield.getText())) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
@@ -134,7 +134,7 @@ public class UserInput extends Application {
 						"Please be reasonable");
 				alert.showAndWait();
 			} else {
-			if (weightTextField.getText().equals("") || dayTextField.getText().equals("")) {
+			if (weightTextField.getText().equals("") || heightTextfield.getText().equals("")) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
@@ -142,7 +142,7 @@ public class UserInput extends Application {
 						"Please fill in both weight and days per week");
 				alert.showAndWait();
 			}
-			else if (Integer.parseInt(dayTextField.getText()) <= 0 || Integer.parseInt(dayTextField.getText()) > 7 /*|| dayTextField.getText().getClass() instanceof double*/) {
+			else if (Integer.parseInt(heightTextfield.getText()) <= 0 || Integer.parseInt(heightTextfield.getText()) > 7 /*|| dayTextField.getText().getClass() instanceof double*/) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
@@ -160,7 +160,7 @@ public class UserInput extends Application {
 			}
 			else {
 				us.setWeight(Double.parseDouble(weightTextField.getText()));
-				us.setDayPerWeek(Integer.parseInt(dayTextField.getText()));
+				us.setHeight(Integer.parseInt(heightTextfield.getText()));
 				BodyChoose body = new BodyChoose(us);
 				primaryStage.close();
 				body.start(primaryStage);

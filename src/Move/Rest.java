@@ -3,7 +3,7 @@ package Move;
 public class Rest extends Exercise{
 		
 	public Rest() {
-		this.getMoveList().add("rest");
+		this.getMoveList().add("Rest");
 	
 		this.getDefinitionList().add("All day");
 		

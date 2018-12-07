@@ -3,7 +3,7 @@ package major;
 
 public class User {
 	private double weight;
-	private int dayPerWeek;
+	private int height;
 	private String bodyShape;
 	private String name;
 	
@@ -17,8 +17,8 @@ public class User {
 		return this.weight;
 	}
 	
-	public int getDayPerWeek() {
-		return this.dayPerWeek;
+	public int getHeight() {
+		return this.height;
 	}
 	
 	public String getBodyShape() {
@@ -35,8 +35,8 @@ public class User {
 		this.weight = weight;
 	}
 	
-	public void setDayPerWeek(int dayPerWeek) {
-		this.dayPerWeek = dayPerWeek;
+	public void setHeight(int height) {
+		this.height = height;
 	}
 	
 	public void setBodyShape(String bodyShape) {

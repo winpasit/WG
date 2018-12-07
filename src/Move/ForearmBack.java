@@ -14,16 +14,16 @@ public class ForearmBack extends Exercise{
 	 */
 	
 	public ForearmBack() {
-		this.getMoveList().add("fingerWristsCurls");
-		this.getMoveList().add("frontedRearRotations");
-		this.getMoveList().add("speed180SideRotations");
-		this.getMoveList().add("sideReverseWristsCurls");
-		this.getMoveList().add("rearedFrontRotations");
-		this.getMoveList().add("overheadShrugs");
-		this.getMoveList().add("bentOverRow");
-		this.getMoveList().add("yBacks");
-		this.getMoveList().add("straightArmPullover");
-		this.getMoveList().add("weightedSuperman");
+		this.getMoveList().add("Finger Wrists Curls");
+		this.getMoveList().add("Fronted Rear Rotations");
+		this.getMoveList().add("Speed 180 Side Rotations");
+		this.getMoveList().add("Side Reverse Wrists Curls");
+		this.getMoveList().add("Reared Front Rotations");
+		this.getMoveList().add("Overheaded Shrugs");
+		this.getMoveList().add("Bent Over Row");
+		this.getMoveList().add("Y Backs");
+		this.getMoveList().add("Straight Arm Pullover");
+		this.getMoveList().add("Weighted Superman");
 		
 		 
 		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {

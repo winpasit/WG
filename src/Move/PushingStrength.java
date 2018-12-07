@@ -3,11 +3,11 @@ package Move;
 public class PushingStrength extends Exercise{
 	
 	public PushingStrength() {
-		this.getMoveList().add("pushups");
-		this.getMoveList().add("dips");
-		this.getMoveList().add("wideGripPushups");
-		this.getMoveList().add("straightBarDips");
-		this.getMoveList().add("closeGripPushups");
+		this.getMoveList().add("Pushups");
+		this.getMoveList().add("Dips");
+		this.getMoveList().add("Widegrip Pushups");
+		this.getMoveList().add("Straight Bar Dips");
+		this.getMoveList().add("Closegrip Pushups");
 		
 		this.getDefinitionList().add("40 reps");
 		this.getDefinitionList().add("20 reps");

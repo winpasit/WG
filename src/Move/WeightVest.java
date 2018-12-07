@@ -7,11 +7,11 @@ public class WeightVest extends Exercise{
 	 * 5)frontLever (10 secs)
 	 */
 	public WeightVest() {
-		this.getMoveList().add("pullUps");
-		this.getMoveList().add("ringsDips");
-		this.getMoveList().add("pushups");
-		this.getMoveList().add("fullPlanche");
-		this.getMoveList().add("frontLever");
+		this.getMoveList().add("Pullups");
+		this.getMoveList().add("Rings Dips");
+		this.getMoveList().add("Pushups");
+		this.getMoveList().add("Full Planche");
+		this.getMoveList().add("Front Lever");
 		
 		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
 			this.getDefinitionList().add("10 secs");
