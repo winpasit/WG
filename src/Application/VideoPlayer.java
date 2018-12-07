@@ -93,6 +93,7 @@ public class VideoPlayer extends Application {
 			int check = 0;
 			for (int j = 0; j < 7; j++) {
 				for (int i = 0; i < 15; i++) {
+					check++;
 					if (text.toLowerCase().equals(wcalis.getDayExercise(j).getMoveName(i).toLowerCase())) {
 						GridPane root = new GridPane();
 						String vid = "videos/WeightCalisthenics/" + text.toLowerCase() + ".mp4";
@@ -146,6 +147,7 @@ public class VideoPlayer extends Application {
 			int check = 0;
 			for (int j = 0; j < 7; j++) {
 				for (int i = 0; i < 15; i++) {
+					check++;
 					if (text.toLowerCase().equals(wt.getDayExercise(j).getMoveName(i).toLowerCase())) {
 						GridPane root = new GridPane();
 						String vid = "videos/WeightTraining/" + text.toLowerCase() + ".mp4";

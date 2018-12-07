@@ -48,7 +48,7 @@ public class Core extends Exercise{
 			this.getMoveList().add("Touch and Gos");
 			this.getMoveList().add("Busters");
 			this.getMoveList().add("Leg Crunches");
-			this.getMoveList().add("Reverse Hip Thrust");
+			this.getMoveList().add("Reverse Hip Thrusts");
 			this.getMoveList().add("Seated Bikes");
 			this.getMoveList().add("Psycho Crunches");
 			this.getMoveList().add("Scissor Kicks");

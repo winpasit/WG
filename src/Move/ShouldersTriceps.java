@@ -22,7 +22,7 @@ public class ShouldersTriceps extends Exercise {
 		this.getMoveList().add("Tricep Press");
 		this.getMoveList().add("Kickbacks");
 		this.getMoveList().add("Skull Crushers");
-		this.getMoveList().add("TatePress");
+		this.getMoveList().add("Tate Press");
 		this.getMoveList().add("Closegrip BenchPress");
 		
 		
