@@ -93,7 +93,7 @@ public class UserInput extends Application {
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
 						alert.setContentText(
-								"Please fill in both weight and days per week");
+								"Please fill in both weight and height");
 						alert.showAndWait();
 					}
 					else if (Integer.parseInt(heightTextfield.getText()) <= 140 || Integer.parseInt(heightTextfield.getText()) > 250 /*|| dayTextField.getText().getClass() instanceof double*/) {
@@ -101,7 +101,7 @@ public class UserInput extends Application {
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
 						alert.setContentText(
-								"Invalid day(s) per week");
+								"Invalid Height");
 						alert.showAndWait();
 					}
 					else if (Integer.parseInt(weightTextField.getText()) <= 30 || Integer.parseInt(weightTextField.getText()) > 200) {
@@ -139,7 +139,7 @@ public class UserInput extends Application {
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
 				alert.setContentText(
-						"Please fill in both weight and days per week");
+						"Please fill in both weight and height");
 				alert.showAndWait();
 			}
 			else if (Integer.parseInt(heightTextfield.getText()) <= 0 || Integer.parseInt(heightTextfield.getText()) > 7 /*|| dayTextField.getText().getClass() instanceof double*/) {
@@ -147,7 +147,7 @@ public class UserInput extends Application {
 				alert.setTitle("Error Dialog");
 				alert.setHeaderText(null);
 				alert.setContentText(
-						"Invalid day(s) per week");
+						"Invalid height");
 				alert.showAndWait();
 			}
 			else if (Integer.parseInt(weightTextField.getText()) <= 0 || Integer.parseInt(weightTextField.getText()) > 200) {
