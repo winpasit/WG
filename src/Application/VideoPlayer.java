@@ -111,6 +111,15 @@ public class VideoPlayer extends Application {
 						
 						root.add(back, 0, 1);
 						Scene scene = new Scene(root, 1024, 768);
+						
+						scene.setOnKeyPressed(e -> {
+						    if (e.getCode() == KeyCode.BACK_SPACE) {
+						    	Schedule sc = new Schedule(us);
+								stage.close();
+								sc.start(stage);
+						    }
+						});
+						
 						stage.setTitle(text);
 						stage.setScene(scene);
 						stage.show();
@@ -155,6 +164,15 @@ public class VideoPlayer extends Application {
 						
 						root.add(back, 0, 1);
 						Scene scene = new Scene(root, 1024, 768);
+						
+						scene.setOnKeyPressed(e -> {
+						    if (e.getCode() == KeyCode.BACK_SPACE) {
+						    	Schedule sc = new Schedule(us);
+								stage.close();
+								sc.start(stage);
+						    }
+						});
+						
 						stage.setTitle(text);
 						stage.setScene(scene);
 						stage.show();
