@@ -79,76 +79,10 @@ public class Schedule extends Application {
 			@Override
 			public void handle(KeyEvent ke) {
 				if (ke.getCode() == KeyCode.ENTER) {
-					if (us.getBodyShape().equals("ectomorph")) {
-						Calisthenics calis = new Calisthenics();
-						for (int j = 0; j < 7; j++) {
-							for (int i = 0; i < 15; i++) {
-								if (movename.getText().toLowerCase().equals(calis.getDayExercise(j).getMoveName(i).toLowerCase())) {
-									StackPane root = new StackPane();
-									String vid = "videos/Calisthenics/" + movename.getText().toLowerCase() + ".mp4";
-									// String image_path = ClassLoader.getSystemResource("images/").toString();
-									MediaPlayer player = new MediaPlayer(
-											new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
-									MediaView mediaView = new MediaView(player);
-									root.getChildren().add(mediaView);
-									Scene scene = new Scene(root, 1024, 768);
-									stage.setTitle(movename.getText());
-									stage.setScene(scene);
-									stage.show();
-
-									player.play();
-								}
-							}
-						}
-					}
-
-					if (us.getBodyShape().equals("mesomorph")) {
-						WeightCalisthenics wcalis = new WeightCalisthenics();
-						for (int j = 0; j < 7; j++) {
-							for (int i = 0; i < 15; i++) {
-								if (movename.getText().toLowerCase().equals(wcalis.getDayExercise(j).getMoveName(i).toLowerCase())) {
-									StackPane root = new StackPane();
-									String vid = "videos/WeightCalisthenics/" + movename.getText().toLowerCase() + ".mp4";
-									// String image_path = ClassLoader.getSystemResource("images/").toString();
-									MediaPlayer player = new MediaPlayer(
-											new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
-									MediaView mediaView = new MediaView(player);
-									root.getChildren().add(mediaView);
-									Scene scene = new Scene(root, 1024, 768);
-									stage.setTitle(movename.getText());
-									stage.setScene(scene);
-									stage.show();
-
-									player.play();
-								}
-							}
-						}
-					}
-
-					if (us.getBodyShape().equals("endomorph")) {
-						WeightTraining wt = new WeightTraining();
-						for (int j = 0; j < 7; j++) {
-							for (int i = 0; i < 15; i++) {
-								if (movename.getText().toLowerCase().equals(wt.getDayExercise(j).getMoveName(i).toLowerCase())) {
-									StackPane root = new StackPane();
-									String vid = "videos/WeightTraining/" + movename.getText().toLowerCase() + ".mp4";
-									// String image_path = ClassLoader.getSystemResource("images/").toString();
-									MediaPlayer player = new MediaPlayer(
-											new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
-									MediaView mediaView = new MediaView(player);
-									root.getChildren().add(mediaView);
-									Scene scene = new Scene(root, 1024, 768);
-									stage.setTitle(movename.getText());
-									stage.setScene(scene);
-									stage.show();
-
-									player.play();
-								}
-							}
-						}
-					}
-
-				}
+					VideoPlayer vp = new VideoPlayer(us,movename.getText());
+					stage.close();
+					vp.start(stage);
+				}	
 			}
 		});
 
