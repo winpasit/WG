@@ -2,5 +2,5 @@ package Interface;
 
 public interface BurnFatable {
 	
-	void burnFat(); 
+	boolean burnFat(); 
 }

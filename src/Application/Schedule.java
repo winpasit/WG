@@ -1,6 +1,7 @@
 package Application;
 
 import major.*;
+import Move.*;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -42,10 +43,13 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
+
 public class Schedule extends Application {
 
 	private User us;
-
+	private boolean bf = false;
+	private Label burn;
+	
 	public Schedule(User us) {
 		this.us = us;
 	}
@@ -146,9 +150,26 @@ public class Schedule extends Application {
 
 		final VBox vbox = new VBox();
 		final HBox hbox = new HBox();
-
+		
+		if (us.getBodyShape().equals("ectomorph")) {
+			Calisthenics calis = new Calisthenics();
+			bf = ((Cardio)calis.getDayExercise(3)).burnFat();
+		} else if (us.getBodyShape().equals("endomorph")) {
+			WeightTraining wt = new WeightTraining();
+			bf = ((Cardio)wt.getDayExercise(4)).burnFat();
+		}
+			
+		if (bf) {
+			burn = new Label("You are burning fat, Keep going!!		");
+		} else {
+			burn = new Label("");
+		}
+		
+		Label wei = new Label("Weight : " + Integer.toString(us.getWeight()) + " kg" + ", ");
+		Label hei = new Label("Height : " + Integer.toString(us.getHeight()) + "cm");
+		
 		hbox.setSpacing(15);
-		hbox.getChildren().addAll(label, movename);
+		hbox.getChildren().addAll(label, movename, burn, wei, hei);
 
 		vbox.setSpacing(5);
 		vbox.setPadding(new Insets(10, 0, 0, 10));

@@ -2,7 +2,7 @@ package major;
 
 
 public class User {
-	private double weight;
+	private int weight;
 	private int height;
 	private String bodyShape;
 	private String name;
@@ -13,7 +13,7 @@ public class User {
 
 	
 	//getter->
-	public double getWeight() {
+	public int getWeight() {
 		return this.weight;
 	}
 	
@@ -31,7 +31,7 @@ public class User {
 	//<-getter
 	
 	//setter->
-	public void setWeight(double weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 	

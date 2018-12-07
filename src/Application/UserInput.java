@@ -113,7 +113,7 @@ public class UserInput extends Application {
 						alert.showAndWait();
 					}
 					else {
-						us.setWeight(Double.parseDouble(weightTextField.getText()));
+						us.setWeight(Integer.parseInt(weightTextField.getText()));
 						us.setHeight(Integer.parseInt(heightTextfield.getText()));
 						BodyChoose body = new BodyChoose(us);
 						primaryStage.close();
@@ -159,7 +159,7 @@ public class UserInput extends Application {
 				alert.showAndWait();
 			}
 			else {
-				us.setWeight(Double.parseDouble(weightTextField.getText()));
+				us.setWeight(Integer.parseInt(weightTextField.getText()));
 				us.setHeight(Integer.parseInt(heightTextfield.getText()));
 				BodyChoose body = new BodyChoose(us);
 				primaryStage.close();
