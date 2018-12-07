@@ -83,9 +83,9 @@ public class Schedule extends Application {
 						Calisthenics calis = new Calisthenics();
 						for (int j = 0; j < 7; j++) {
 							for (int i = 0; i < 15; i++) {
-								if (movename.getText().equals(calis.getDayExercise(j).getMoveName(i))) {
+								if (movename.getText().toLowerCase().equals(calis.getDayExercise(j).getMoveName(i).toLowerCase())) {
 									StackPane root = new StackPane();
-									String vid = "videos/Calisthenics/" + movename.getText() + ".mp4";
+									String vid = "videos/Calisthenics/" + movename.getText().toLowerCase() + ".mp4";
 									// String image_path = ClassLoader.getSystemResource("images/").toString();
 									MediaPlayer player = new MediaPlayer(
 											new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
@@ -106,9 +106,9 @@ public class Schedule extends Application {
 						WeightCalisthenics wcalis = new WeightCalisthenics();
 						for (int j = 0; j < 7; j++) {
 							for (int i = 0; i < 15; i++) {
-								if (movename.getText().equals(wcalis.getDayExercise(j).getMoveName(i))) {
+								if (movename.getText().toLowerCase().equals(wcalis.getDayExercise(j).getMoveName(i).toLowerCase())) {
 									StackPane root = new StackPane();
-									String vid = "videos/WeightCalisthenics/" + movename.getText() + ".mp4";
+									String vid = "videos/WeightCalisthenics/" + movename.getText().toLowerCase() + ".mp4";
 									// String image_path = ClassLoader.getSystemResource("images/").toString();
 									MediaPlayer player = new MediaPlayer(
 											new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
@@ -129,9 +129,9 @@ public class Schedule extends Application {
 						WeightTraining wt = new WeightTraining();
 						for (int j = 0; j < 7; j++) {
 							for (int i = 0; i < 15; i++) {
-								if (movename.getText().equals(wt.getDayExercise(j).getMoveName(i))) {
+								if (movename.getText().toLowerCase().equals(wt.getDayExercise(j).getMoveName(i).toLowerCase())) {
 									StackPane root = new StackPane();
-									String vid = "videos/WeightTraining/" + movename.getText() + ".mp4";
+									String vid = "videos/WeightTraining/" + movename.getText().toLowerCase() + ".mp4";
 									// String image_path = ClassLoader.getSystemResource("images/").toString();
 									MediaPlayer player = new MediaPlayer(
 											new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
