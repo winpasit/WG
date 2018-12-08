@@ -99,19 +99,19 @@ public class Schedule extends Application {
 		TableColumn<Map, String> seventhDataColumn = new TableColumn<>("Day 7");
 
 		firstDataColumn.setCellValueFactory(new MapValueFactory(Column1MapKey));
-		firstDataColumn.setMinWidth(180);
+		firstDataColumn.setMinWidth(200);
 		secondDataColumn.setCellValueFactory(new MapValueFactory(Column2MapKey));
-		secondDataColumn.setMinWidth(180);
+		secondDataColumn.setMinWidth(190);
 		thirdDataColumn.setCellValueFactory(new MapValueFactory(Column3MapKey));
-		thirdDataColumn.setMinWidth(180);
+		thirdDataColumn.setMinWidth(190);
 		fourthDataColumn.setCellValueFactory(new MapValueFactory(Column4MapKey));
-		fourthDataColumn.setMinWidth(180);
+		fourthDataColumn.setMinWidth(210);
 		fifthDataColumn.setCellValueFactory(new MapValueFactory(Column5MapKey));
-		fifthDataColumn.setMinWidth(180);
+		fifthDataColumn.setMinWidth(150);
 		sixthDataColumn.setCellValueFactory(new MapValueFactory(Column6MapKey));
-		sixthDataColumn.setMinWidth(180);
+		sixthDataColumn.setMinWidth(200);
 		seventhDataColumn.setCellValueFactory(new MapValueFactory(Column7MapKey));
-		seventhDataColumn.setMinWidth(180);
+		seventhDataColumn.setMinWidth(90);
 
 		TableView tableView = new TableView<>(generateDataInMap());
 		tableView.setStyle("-fx-background-color:brown;");
