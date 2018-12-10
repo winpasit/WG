@@ -24,12 +24,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Login extends Application {
-	
+
 	@Override
 	public void start(Stage primaryStage) {
-		
+
 		User us = new User();
-		
+
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setHgap(30);
@@ -64,8 +64,9 @@ public class Login extends Application {
 		userName.setStyle("-fx-text-fill: white;");
 		pw.setStyle("-fx-text-fill: white;");
 		grid.setStyle("-fx-background-color:black;");
-		scenetitle.setStyle("-fx-font-size: 30px; -fx-font-family:\"Arial Black\";-fx-fill: lime;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n" + 
-				"");
+		scenetitle.setStyle(
+				"-fx-font-size: 30px; -fx-font-family:\"Arial Black\";-fx-fill: lime;-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);\r\n"
+						+ "");
 		signinBtn.setStyle(
 				"-fx-text-fill: green; -fx-font-weight: bold; -fx-font-family: \"Arial Narrow\"; -fx-background-color: white;");
 		exitBtn.setStyle(
@@ -81,7 +82,7 @@ public class Login extends Application {
 				}
 			}
 		});
-		
+
 		pwBox.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent ky) {
@@ -90,26 +91,24 @@ public class Login extends Application {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
-						alert.setContentText(
-								"Please fill in both username and password");
+						alert.setContentText("Please fill in both username and password");
 						alert.showAndWait();
-						}
-						else {
-							us.setName(userTextField.getText());
-							Alert alert = new Alert(AlertType.INFORMATION);
-							alert.setTitle("Welcome Dialog");
-							alert.setHeaderText(null);
-							alert.setContentText(
-									"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
-							alert.showAndWait();
-							UserInput user = new UserInput(us);
-							primaryStage.close();
-							user.start(primaryStage);
-						}	
+					} else {
+						us.setName(userTextField.getText());
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Welcome Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText(
+								"Welcome, " + userTextField.getText() + ". Your Password is " + pwBox.getText() + ".");
+						alert.showAndWait();
+						UserInput user = new UserInput(us);
+						primaryStage.close();
+						user.start(primaryStage);
+					}
 				}
 			}
 		});
-		
+
 		// change button width when mouse over
 		signinBtn.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
@@ -139,16 +138,14 @@ public class Login extends Application {
 		signinBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				
+
 				if (userTextField.getText().equals("") || pwBox.getText().equals("")) {
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("Error Dialog");
-				alert.setHeaderText(null);
-				alert.setContentText(
-						"Please fill in both username and password");
-				alert.showAndWait();
-				}
-				else {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Error Dialog");
+					alert.setHeaderText(null);
+					alert.setContentText("Please fill in both username and password");
+					alert.showAndWait();
+				} else {
 					us.setName(userTextField.getText());
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Welcome Dialog");
@@ -159,7 +156,7 @@ public class Login extends Application {
 					UserInput user = new UserInput(us);
 					primaryStage.close();
 					user.start(primaryStage);
-				}			
+				}
 
 			}
 

@@ -3,7 +3,7 @@ package major;
 import Move.*;
 
 public class WeightCalisthenics extends Training {
-	
+
 	public WeightCalisthenics() {
 		this.getWeekExerciseList().add(new UpperBody());
 		this.getWeekExerciseList().add(new LowerBody());
@@ -12,6 +12,6 @@ public class WeightCalisthenics extends Training {
 		this.getWeekExerciseList().add(new ExplosiveTraining());
 		this.getWeekExerciseList().add(new Dropset());
 		this.getWeekExerciseList().add(new Rest());
-		
+
 	}
 }

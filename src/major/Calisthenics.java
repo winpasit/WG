@@ -2,7 +2,6 @@ package major;
 
 import Move.*;
 
-
 public class Calisthenics extends Training {
 	public Calisthenics() {
 		this.getWeekExerciseList().add(new PullingStrength());

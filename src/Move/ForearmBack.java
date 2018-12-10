@@ -1,18 +1,12 @@
 package Move;
 
-public class ForearmBack extends Exercise{
-	/* 1.1)fingerWristsCurls
-	 * 1.2)frontedRearRotations
-	 * 1.3)speed180SideRotations
-	 * 1.4)sideReverseWristsCurls
-	 * 1.5)rearedFrontRotations
-	 * 2.1)overheadShrugs
-	 * 2.2)bentOverRow
-	 * 2.3)yBacks
-	 * 2.4)straightArmPullover
-	 * 2.5)weightedSuperman
+public class ForearmBack extends Exercise {
+	/*
+	 * 1.1)fingerWristsCurls 1.2)frontedRearRotations 1.3)speed180SideRotations
+	 * 1.4)sideReverseWristsCurls 1.5)rearedFrontRotations 2.1)overheadShrugs
+	 * 2.2)bentOverRow 2.3)yBacks 2.4)straightArmPullover 2.5)weightedSuperman
 	 */
-	
+
 	public ForearmBack() {
 		this.getMoveList().add("Finger Wrists Curls");
 		this.getMoveList().add("Fronted Rear Rotations");
@@ -24,16 +18,15 @@ public class ForearmBack extends Exercise{
 		this.getMoveList().add("Y Backs");
 		this.getMoveList().add("Straight Arm Pullover");
 		this.getMoveList().add("Weighted Superman");
-		
-		 
-		for(int  i = 0 ; i < this.getMoveList().size() ; i++) {
+
+		for (int i = 0; i < this.getMoveList().size(); i++) {
 			this.getDefinitionList().add("1 min");
 		}
-		
-		while(this.getMoveList().size() != 15) {
+
+		while (this.getMoveList().size() != 15) {
 			this.getMoveList().add("");
 			this.getDefinitionList().add("");
 		}
-		
+
 	}
 }

@@ -18,16 +18,16 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class BodyChoose extends Application {
-	
-	
+
 	private User us;
+
 	public BodyChoose(User us) {
 		this.us = us;
 	}
 
 	@Override
 	public void start(Stage primaryStage) {
-		
+
 		VBox vb = new VBox();
 		HBox hbox = new HBox();
 		Button ectomorph = new Button("ECTOMORPH");
@@ -58,21 +58,21 @@ public class BodyChoose extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("BodyChoose");
 		primaryStage.show();
-		
+
 		ectomorph.setOnAction(e -> {
 			us.setBodyShape("ectomorph");
 			Schedule sc = new Schedule(us);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
-		
+
 		mesomorph.setOnAction(e -> {
 			us.setBodyShape("mesomorph");
 			Schedule sc = new Schedule(us);
 			primaryStage.close();
 			sc.start(primaryStage);
 		});
-		
+
 		endomorph.setOnAction(e -> {
 			us.setBodyShape("endomorph");
 			Schedule sc = new Schedule(us);
@@ -80,8 +80,6 @@ public class BodyChoose extends Application {
 			sc.start(primaryStage);
 		});
 	}
-
-	
 
 	public static void main(String[] args) {
 		launch(args);

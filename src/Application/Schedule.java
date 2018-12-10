@@ -43,13 +43,12 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
-
 public class Schedule extends Application {
 
 	private User us;
 	private boolean bf = false;
 	private Label burn;
-	
+
 	public Schedule(User us) {
 		this.us = us;
 	}
@@ -62,7 +61,6 @@ public class Schedule extends Application {
 	public static final String Column6MapKey = "Day 6";
 	public static final String Column7MapKey = "Day 7";
 
-	// 3
 	@Override
 	public void start(Stage stage) {
 		Scene scene = new Scene(new Group());
@@ -150,24 +148,24 @@ public class Schedule extends Application {
 
 		final VBox vbox = new VBox();
 		final HBox hbox = new HBox();
-		
+
 		if (us.getBodyShape().equals("ectomorph")) {
 			Calisthenics calis = new Calisthenics();
-			bf = ((Cardio)calis.getDayExercise(3)).burnFat();
+			bf = ((Cardio) calis.getDayExercise(3)).burnFat();
 		} else if (us.getBodyShape().equals("endomorph")) {
 			WeightTraining wt = new WeightTraining();
-			bf = ((Cardio)wt.getDayExercise(4)).burnFat();
+			bf = ((Cardio) wt.getDayExercise(4)).burnFat();
 		}
-			
+
 		if (bf) {
 			burn = new Label("You are burning fat, Keep going!!		");
 		} else {
 			burn = new Label("");
 		}
-		
+
 		Label wei = new Label("Weight : " + Integer.toString(us.getWeight()) + " kg" + ", ");
 		Label hei = new Label("Height : " + Integer.toString(us.getHeight()) + "cm");
-		
+
 		hbox.setSpacing(15);
 		hbox.getChildren().addAll(label, movename, burn, wei, hei);
 

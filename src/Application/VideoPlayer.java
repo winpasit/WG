@@ -22,11 +22,11 @@ import major.WeightCalisthenics;
 import major.WeightTraining;
 
 public class VideoPlayer extends Application {
-	
+
 	private String text;
 	private User us;
-	
-	public VideoPlayer(User us,String text) {
+
+	public VideoPlayer(User us, String text) {
 		this.us = us;
 		this.text = text;
 	}
@@ -43,46 +43,43 @@ public class VideoPlayer extends Application {
 						GridPane root = new GridPane();
 						root.setAlignment(Pos.TOP_CENTER);
 						String vid = "videos/Calisthenics/" + text.toLowerCase() + ".mp4";
-						// String image_path = ClassLoader.getSystemResource("images/").toString();
 						MediaPlayer player = new MediaPlayer(
 								new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
 						MediaView mediaView = new MediaView(player);
 						mediaView.setFitHeight(800);
 						mediaView.setFitWidth(800);
-						root.add(mediaView,0,0);
-						
+						root.add(mediaView, 0, 0);
+
 						Button back = new Button("Back");
 						back.setOnAction(e -> {
 							Schedule sc = new Schedule(us);
 							stage.close();
 							sc.start(stage);
 						});
-						
-						
+
 						root.add(back, 1, 0);
-						
+
 						Scene scene = new Scene(root, 1000, 1000);
-						
+
 						scene.setOnKeyPressed(e -> {
-						    if (e.getCode() == KeyCode.BACK_SPACE) {
-						    	Schedule sc = new Schedule(us);
+							if (e.getCode() == KeyCode.BACK_SPACE) {
+								Schedule sc = new Schedule(us);
 								stage.close();
 								sc.start(stage);
-						    }
+							}
 						});
-						
+
 						stage.setTitle(text);
 						stage.setScene(scene);
 						stage.show();
 
 						player.play();
 						break;
-					} else if(check >= 105) {
+					} else if (check >= 105) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
-						alert.setContentText(
-								"Please check your spelling");
+						alert.setContentText("Please check your spelling");
 						alert.showAndWait();
 						Schedule sc = new Schedule(us);
 						stage.close();
@@ -102,44 +99,42 @@ public class VideoPlayer extends Application {
 						GridPane root = new GridPane();
 						root.setAlignment(Pos.TOP_CENTER);
 						String vid = "videos/WeightCalisthenics/" + text.toLowerCase() + ".mp4";
-						// String image_path = ClassLoader.getSystemResource("images/").toString();
 						MediaPlayer player = new MediaPlayer(
 								new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
 						MediaView mediaView = new MediaView(player);
 						mediaView.setFitHeight(800);
 						mediaView.setFitWidth(800);
-						root.add(mediaView,0,0);
-						
+						root.add(mediaView, 0, 0);
+
 						Button back = new Button("Back");
 						back.setOnAction(e -> {
 							Schedule sc = new Schedule(us);
 							stage.close();
 							sc.start(stage);
 						});
-						
+
 						root.add(back, 1, 0);
 						Scene scene = new Scene(root, 1000, 1000);
-						
+
 						scene.setOnKeyPressed(e -> {
-						    if (e.getCode() == KeyCode.BACK_SPACE) {
-						    	Schedule sc = new Schedule(us);
+							if (e.getCode() == KeyCode.BACK_SPACE) {
+								Schedule sc = new Schedule(us);
 								stage.close();
 								sc.start(stage);
-						    }
+							}
 						});
-						
+
 						stage.setTitle(text);
 						stage.setScene(scene);
 						stage.show();
 
 						player.play();
 						break;
-					} else if(check >= 105) {
+					} else if (check >= 105) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
-						alert.setContentText(
-								"Please check your spelling");
+						alert.setContentText("Please check your spelling");
 						alert.showAndWait();
 						Schedule sc = new Schedule(us);
 						stage.close();
@@ -159,49 +154,47 @@ public class VideoPlayer extends Application {
 						GridPane root = new GridPane();
 						root.setAlignment(Pos.TOP_CENTER);
 						String vid = "videos/WeightTraining/" + text.toLowerCase() + ".mp4";
-						// String image_path = ClassLoader.getSystemResource("images/").toString();
 						MediaPlayer player = new MediaPlayer(
 								new Media(getClass().getClassLoader().getResource(vid).toExternalForm()));
 						MediaView mediaView = new MediaView(player);
 						mediaView.setFitHeight(800);
 						mediaView.setFitWidth(800);
-						
-						root.add(mediaView,0,0);
+
+						root.add(mediaView, 0, 0);
 						Button back = new Button("Back");
 						back.setOnAction(e -> {
 							Schedule sc = new Schedule(us);
 							stage.close();
 							sc.start(stage);
 						});
-						
+
 						root.add(back, 1, 0);
 						Scene scene = new Scene(root, 1000, 1000);
-						
+
 						scene.setOnKeyPressed(e -> {
-						    if (e.getCode() == KeyCode.BACK_SPACE) {
-						    	Schedule sc = new Schedule(us);
+							if (e.getCode() == KeyCode.BACK_SPACE) {
+								Schedule sc = new Schedule(us);
 								stage.close();
 								sc.start(stage);
-						    }
+							}
 						});
-						
+
 						stage.setTitle(text);
 						stage.setScene(scene);
 						stage.show();
 
 						player.play();
 						break;
-					} else if(check >= 105) {
+					} else if (check >= 105) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Error Dialog");
 						alert.setHeaderText(null);
-						alert.setContentText(
-								"Please check your spelling");
+						alert.setContentText("Please check your spelling");
 						alert.showAndWait();
 						Schedule sc = new Schedule(us);
 						stage.close();
 						sc.start(stage);
-						
+
 					}
 				}
 			}
